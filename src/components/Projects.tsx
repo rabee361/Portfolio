@@ -30,20 +30,29 @@ function Projects() {
   // }
 
     return (
-      <div className='flex items-center justify-center w-full h-screen bg-black'>
+      <div className='flex items-center justify-center w-full h-screen'>
           <div ref={ref} className="flex flex-col gap-10 sm:h-3/4 w-96 sm:w-11/12">
               <motion.span variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.5}} className=" text-center text-3xl">
                   Projects
               </motion.span>
               <div  className=" h-full flex justify-between overflow-y-hidden">
-                  <motion.div variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.5}}  className=" w-3/4 m-3">
-                    <img src={img} alt="project image" className=" h-full " />
+                  <motion.div variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.5}} style={{backgroundImage: `url(${img})` , backgroundSize:'cover'}} className=" w-3/4 m-3 rounded-2xl">
+                    {/* <motion.img whileHover={{scale:1.02}} src={img} alt="project image" className=" h-full " /> */}
+                    <div className="flex items-center justify-center size-full">
+                      text
+                    </div>
                   </motion.div>
-                  <motion.div  variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.4}} className=" w-3/4 m-3">
-                    <img src={img} alt="project image" className=" h-full " />
+                  <motion.div  variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.4}} style={{backgroundImage: `url(${img})` , backgroundSize:'cover'}} className=" w-3/4 m-3 rounded-2xl">
+                    {/* <motion.img whileHover={{scale:1.02}} src={img} alt="project image" className=" h-full rounded-2xl" /> */}
+                    <div className="flex items-center justify-center size-full">
+                      text
+                    </div>
                   </motion.div>
-                  <motion.div  variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.3}} className=" w-3/4 m-3">
-                    <img src={img} alt="project image" className=" h-full " />
+                  <motion.div variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.3}} style={{backgroundImage: `url(${img})` , backgroundSize:'cover'}} className=" w-3/4 m-3 rounded-2xl ">
+                    {/* <motion.img whileHover={{scale:1.02}} src={img} alt="project image" className=" h-full rounded-2xl" /> */}
+                    <div className="flex items-center justify-center size-full">
+                      text
+                    </div>
                   </motion.div>
               </div>
           </div>

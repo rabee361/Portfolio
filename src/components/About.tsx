@@ -24,7 +24,7 @@ function About() {
   }
   
   return (
-    <div className='flex items-center justify-center w-full h-screen bg-black '>
+    <div className='flex items-center justify-center w-full h-screen '>
         <div ref={ref} className="flex flex-col gap-10 h-3/4 w-11/12">
             <motion.span variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.2}} className="text-center text-3xl">
                 About

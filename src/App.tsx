@@ -1,8 +1,9 @@
 import Navbar from './components/Navbar'
 import './App.css'
 import About from './components/About';
-import Projects from './components/Projects';
+// import Projects from './components/Projects';
 import Hero from './components/Hero';
+import RecentProjects from './components/RecentProjects';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <Navbar/>
       <Hero/>
       <About/>
-      <Projects/>
+      <RecentProjects/>
     </div>
 
   )

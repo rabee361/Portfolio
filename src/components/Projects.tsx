@@ -4,15 +4,14 @@ import img from "../assets/images/img.jpg"
 
 function Projects() {
 
-  const ref = useRef(null)
+  const ref = useRef(null);
   const IsInView = useInView(ref);
 
   const mainControls = useAnimation();
 
   useEffect(() => {
-    
-    if (IsInView){
-      mainControls.start("visible")
+  if (IsInView){
+      mainControls.start("visible");
     }
     // else {
     //   mainControls.set("hidden")
@@ -42,8 +41,8 @@ function Projects() {
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-b group-hover:from-black/50 group-hover:via-black/40 group-hover:to-black/50"></div>
                     <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
-                      <h1 className="text-2xl font-bold mb-10">Al-Noor Hajj Campaign App</h1>
-                      <p className="text-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-150">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quae explicabo blanditiis culpa deleniti maiores deserunt delectus laudantium quam minima doloremque, possimus exercitationem, aliquid iusto eaque similique accusamus quaerat quas.</p>
+                      <h1 className="text-2xl font-bold mb-40">Al-Noor Hajj Campaign App</h1>
+                      <p className="text-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-150"></p>
                     </div>
                   </motion.div>
                   <motion.div className="group relative items-center justify-center overflow-hidden cursor-pointer rounded-2xl shadow-xl" variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.5}}>
@@ -52,8 +51,8 @@ function Projects() {
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-b group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                     <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-500">
-                      <h1 className="text-2xl font-bold mb-16 group-hover:mb-5">Danac E-commerce and Employee managment system</h1>
-                      <p className="text-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-150">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quae explicabo blanditiis culpa deleniti maiores deserunt delectus laudantium quam minima doloremque, possimus exercitationem, aliquid iusto eaque similique accusamus quaerat quas.</p>
+                      <h1 className="text-2xl font-bold mb-6 group-hover:mb-5">Danac E-commerce and Employee managment system</h1>
+                      <p className="text-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-150">A Project for a local wholesale store consisting of multiple apps for managing products and clients's orders offering features like real-time chat with store managers, track deliveries, managing product, discounts, sales and much more with organizing HR work and staff info all in one place. </p>
                     </div>
                   </motion.div>
                   <motion.div className="group relative items-center justify-center overflow-hidden cursor-pointer rounded-2xl shadow-xl" variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.4}}>

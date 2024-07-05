@@ -41,10 +41,10 @@ function Hero() {
         <img src={img} />
       </div>
     </motion.div>
-    <motion.p variants={pageVariants} initial="initial" animate="in" className='flex items-center justify-center text-3xl sm:text-8xl text-nowrap font-bold'>Rabee <span className='text-blue-400 ml-1 sm:ml-3'>Hasan</span></motion.p>
-    <motion.span variants={pageVariants2} initial="initial" animate="in" className='text-sm sm:text-xl text-center'>Web Developer | Django | Python | Back-end Developer </motion.span>
+    <motion.p variants={pageVariants} initial="initial" animate="in" className='flex items-center justify-center text-3xl sm:text-8xl text-nowrap font-bold'>Rabee <span className='bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-transparent bg-clip-text ml-1 sm:ml-3'>Hasan</span></motion.p>
+    <motion.span variants={pageVariants2} initial="initial" animate="in" className='text-sm sm:text-xl text-center'>Web Developer | Back-end Developer | Django | Python </motion.span>
     <motion.div variants={pageVariants} initial="initial" animate="in"  className='pt-10'>
-        <ul className='flex gap-10'>
+        <ul className='flex gap-10'> 
             <li><a href="https://github.com/rabee361"><FaGithub size={30}/></a></li>
             <li><a href="rha60540@gmail.com"><MdEmail size={30}/></a></li>
             <li><a href="http://linkedin.com/in/rabee-hasan-145487269"><FaLinkedin size={30}/></a></li>

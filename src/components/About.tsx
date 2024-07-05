@@ -8,20 +8,20 @@ function About() {
   const mainControls = useAnimation();
 
   useEffect(() => {
-    console.log(IsInView);
     
     if (IsInView){
       mainControls.start("visible")
-    }
+    } 
     // else {
     //   mainControls.set("hidden")
     // }
   } , [IsInView])
 
   const variant = {
-    hidden:{opacity:0 , y:200},
-    visible:{opacity:1 , y:0}
+    hidden:{opacity:0 , x:-200},
+    visible:{opacity:1 , x:0}
   }
+
   
   return (
     <div className='flex items-center justify-center w-full h-screen '>

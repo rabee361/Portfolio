@@ -5,8 +5,8 @@ import About from './components/About';
 import Hero from './components/Hero';
 import RecentProjects from './components/RecentProjects';
 
-
 function App() {
+
 
   return (
     <div className='top-0 left-0 h-svh w-full overflow-x-hidden'>

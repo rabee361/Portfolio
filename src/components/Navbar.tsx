@@ -1,6 +1,7 @@
 
-
 function Navbar() {
+
+
   return (
     <div className=" fixed top-0 flex justify-between h-14 w-full text-white font-medium">
         <div className="flex h-full items-center ml-5 gap-5">

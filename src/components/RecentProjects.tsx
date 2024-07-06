@@ -70,7 +70,7 @@ function RecentProjects() {
       {/* <motion.span variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.2}} className="text-center text-3xl mb-16">
             Recent Projects
       </motion.span> */}
-      <motion.span variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.2}} className="text-center text-3xl mb-16">
+      <motion.span id='projects' variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.2}} className="text-center text-3xl mb-16">
             Recent Projects
       </motion.span>
 

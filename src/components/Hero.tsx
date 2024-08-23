@@ -37,7 +37,7 @@ function Hero() {
   return (
     <div className='flex flex-col gap-1 sm:gap-5 h-screen items-center justify-center text-white '>
     <motion.div variants={pageVariants2} initial="initial" animate="in"  className='avatar rounded-full'>
-      <div className=' w-20 sm:w-44 rounded-full'>
+      <div className=' w-20 sm:w-44 rounded-full shadow-blue-shadow '>
         <img src={img} />
       </div>
     </motion.div>

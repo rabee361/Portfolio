@@ -65,7 +65,7 @@ function Hero() {
                 </a>  
             </motion.div>
         </div>
-        <motion.div variants={pageVariants2} initial="initial2" animate="in2" className="w-1/2 pr-16 h-screen flex items-center justify-center overflow-x-hidden">
+        <motion.div variants={pageVariants2} initial="initial2" animate="in2" className="w-1/2 h-screen flex items-center justify-center overflow-x-hidden">
             <img className="w-4/5 h-fit" src={cartoon3} alt="" />
         </motion.div>
     </section>

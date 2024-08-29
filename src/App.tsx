@@ -1,28 +1,23 @@
-import Navbar from './components/Navbar'
 import './App.css'
-import About from './components/About';
-// import Project from './components/Project';
-import Hero from './components/Hero';
-import RecentProjects from './components/RecentProjects';
-// import { BrowserRouter as Routes, Route } from "react-router-dom";
-// import Al_Noor from './components/projects/Al_Noor';
-// import Danac from './components/projects/Danac';
+// import About from './components/About';
+import ExpenseTracker from './components/projects/expense-tracker/ExpenseTracker';
+// import { Link } from 'react-router-dom';
+// import Hero from './components/Hero';
+// import RecentProjects from './components/RecentProjects';
+import { BrowserRouter , Route , Routes} from "react-router-dom";
+import HomePage from './components/home/HomePage';
 // import ExpenseTracker from './components/projects/ExpenseTracker';
 
 
-function App() {
-
-
+const App: React.FC = () => {
   return (
-    <div className='top-0 left-0 h-svh w-full overflow-x-hidden'>
-      {/* <Project/> */}
-      <Navbar/>
-      <Hero/>
-      <About/>
-      <RecentProjects/>
-    </div>
-
-  )
-}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/expense-tracker" element={<ExpenseTracker />} />
+        </Routes>
+      </BrowserRouter>
+  );
+};
 
 export default App

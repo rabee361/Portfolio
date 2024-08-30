@@ -3,7 +3,7 @@ function Navbar() {
 
 
     return (
-      <div className=" fixed top-0 flex justify-between h-14 w-full text-white font-medium">
+      <div className=" fixed top-0 z-10 flex justify-between h-14 w-full text-white font-medium">
           <div className="flex h-full items-center ml-5 gap-5">
               wallet
           </div>
@@ -22,6 +22,12 @@ function Navbar() {
                       behavior:'smooth'
                     })
                   }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">About</li>
+                  <li  onClick={()=> {
+                    const element = document.getElementById('demo');
+                    element?.scrollIntoView({
+                      behavior:'smooth'
+                    })
+                  }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">Demo</li>
               </ul>
           </div>
       </div>

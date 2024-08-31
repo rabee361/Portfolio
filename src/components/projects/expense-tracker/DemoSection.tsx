@@ -1,4 +1,5 @@
-import video from "../../../assets/videos/charts.mp4"
+import m1 from "../../../assets/images/m1.png"
+import m2 from "../../../assets/images/m2.png"
 
 function DemoSection() {
   return (
@@ -9,10 +10,12 @@ function DemoSection() {
 
 
     // </section>
-        <section className='h-screen w-full flex flex-row items-center justify-between overflow-x-hidden overflow-y-hidden'>
-        <div className="w-2/3 h-screen pl-20 flex flex-col items-center justify-center">
-            <div className="justify-centertext-3xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
-                All your financial information in one place with
+        <section id="demo" className='h-screen w-full flex flex-row items-center justify-between overflow-x-hidden overflow-y-hidden'>
+        <div className="w-2/3 h-screen pl-20 flex flex-col justify-center">
+            <div className="justify-centertext-3xl font-extrabold tracking-tight leading-none flex flex-col gap-5 text-white md:text-3xl lg:text-4xl">
+                <li>A unique UI built with Flutter to provide the best user experience possible</li>
+                <li>second</li>
+                <li>third</li>
             </div>
             <div className="mt-10 w-full space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
                 <a href="#" className="ease-linear duration-300 inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
@@ -23,8 +26,9 @@ function DemoSection() {
                 </a>
             </div>
         </div>
-        <div className="w-1/3 h-full mt-24 flex items-center justify-center overflow-x-hidden overflow-y-hidden pb-10">
-          <video src={video} autoPlay muted loop className="w-full scale-150 h-3/5 pr-10"></video>
+        <div className="w-1/3 h-full mt-10 mr-10  flex items-center justify-center overflow-x-hidden overflow-y-hidden pb-10">
+          <img src={m2} width={200} className=" absolute " alt="" />
+          <img src={m1} width={160} className="absolute ml-52 mt-52 object-cover" alt="" />
         </div>
     </section>
   )

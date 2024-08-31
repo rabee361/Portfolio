@@ -45,7 +45,7 @@ function Hero() {
     };
 
   return (
-    <section className='h-screen w-full flex flex-row items-center justify-between overflow-x-hidden'>
+    <section id="home" className='h-screen flex flex-row items-center justify-between overflow-x-hidden'>
         <div className="w-1/2 h-screen pl-20 flex flex-col items-center justify-center">
             <motion.div variants={pageVariants} initial="initial" animate="in" className="justify-centertext-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                 All your financial information in one place with
@@ -60,8 +60,13 @@ function Hero() {
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                     </svg>
                 </a>
-                <a href="#" className="ease-linear duration-300 inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
-                    see description
+                <a onClick={() => {
+                    const element = document.getElementById('about')
+                    element?.scrollIntoView({
+                      behavior: 'smooth'
+                    })
+                  }} href="#" className="ease-linear duration-300 inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                    see details
                 </a>  
             </motion.div>
         </div>

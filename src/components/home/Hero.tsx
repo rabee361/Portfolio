@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import img from '../../assets/images/img.jpg'
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";

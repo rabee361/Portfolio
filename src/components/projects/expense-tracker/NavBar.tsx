@@ -9,9 +9,14 @@ function Navbar() {
           </div>
           <div className="mr-10 hidden sm:block">
               <ul className="flex h-full items-center gap-8">
-                  <li className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">Home</li>
                   <li onClick={() => {
-                    const element = document.getElementById('projects')
+                    const element = document.getElementById('home')
+                    element?.scrollIntoView({
+                      behavior: 'smooth'
+                    })
+                  }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">Home</li>
+                  <li onClick={() => {
+                    const element = document.getElementById('features')
                     element?.scrollIntoView({
                       behavior: 'smooth'
                     })

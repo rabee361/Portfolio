@@ -14,16 +14,32 @@ function Feauters() {
     
     if (IsInView){
       mainControls.start("in")
+      mainControls.start("in2")
+  
     } 
   } , [IsInView])
 
   const pageVariants = {
     initial: {
-    y: 200, 
+    x: -200, 
     opacity: 0,
     },
     in: {
-    y: 0, 
+    x: 0, 
+    opacity: 1,
+    transition: {
+        duration: 1, 
+    },
+    },
+};
+
+  const pageVariants2 = {
+    initial2: {
+    x: 200, 
+    opacity: 0,
+    },
+    in2: {
+    x: 0, 
     opacity: 1,
     transition: {
         duration: 1, 
@@ -33,7 +49,7 @@ function Feauters() {
 
 
   return (
-      <div id="features" ref={ref} className="h-screen w-full text-white flex items-center justify-evenly">
+      <div id="features" ref={ref} className="h-screen w-full text-white flex items-center justify-evenly overflow-x-hidden">
         <motion.div variants={pageVariants} initial="initial" animate={mainControls} className=" flex flex-col items-center justify-center h-full w-1/4 ">
           <div className="h-1/2 w-full flex items-end mb-10 justify-center text-4xl font-bold">
             {/* <GiReceiveMoney size={140}/> */}
@@ -52,7 +68,7 @@ function Feauters() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quas laboriosam ut placeat aspernatur accusantium, in doloribus labore voluptatem adipisci fuga exercitationem perferendis possimus repellendus ducimus quae illo provident tempora.
           </div>
         </motion.div>
-        <motion.div variants={pageVariants} initial="initial" animate={mainControls} className=" flex flex-col items-center justify-center text-center h-full w-1/4">
+        <motion.div variants={pageVariants2} initial="initial2" animate={mainControls} className=" flex flex-col items-center justify-center text-center h-full w-1/4">
           <div className="h-1/2 w-full flex items-end mb-10 justify-center text-4xl font-bold text-center">
               {/* <FaChartLine size={140}/> */}
               <img src={chart} width={100} alt="" />

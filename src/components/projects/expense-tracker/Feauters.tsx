@@ -13,8 +13,8 @@ function Feauters() {
   useEffect(() => { 
     
     if (IsInView){
-      mainControls.start("in")
-      mainControls.start("in2")
+      mainControls.start("in");
+      mainControls.start("in2");
   
     } 
   } , [IsInView])
@@ -56,7 +56,7 @@ function Feauters() {
             <img src={money} width={120} alt="" />
           </div>
           <div className="h-1/2 mb-36 px-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quas laboriosam ut placeat aspernatur accusantium, in doloribus labore voluptatem adipisci fuga exercitationem perferendis possimus repellendus ducimus quae illo provident tempora.
+            save your money  
           </div>
         </motion.div>
         <motion.div variants={pageVariants} initial="initial" animate={mainControls} className="flex flex-col items-end justify-center h-full w-1/4">
@@ -64,8 +64,9 @@ function Feauters() {
               {/* <IoIosNotificationsOutline size={140}/> */}
               <img src={bell} width={100} alt="" />
           </div>
-          <div className="h-1/2 mb-36 px-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quas laboriosam ut placeat aspernatur accusantium, in doloribus labore voluptatem adipisci fuga exercitationem perferendis possimus repellendus ducimus quae illo provident tempora.
+          <div className="h-1/2 mb-36 px-7 text-center">
+            set notification and reminders for upcoming payments like rent, car payment or any kind of payments.
+            powered by firebase's push notifications and integrated into django with fcm-django library
           </div>
         </motion.div>
         <motion.div variants={pageVariants2} initial="initial2" animate={mainControls} className=" flex flex-col items-center justify-center text-center h-full w-1/4">
@@ -73,8 +74,10 @@ function Feauters() {
               {/* <FaChartLine size={140}/> */}
               <img src={chart} width={100} alt="" />
           </div>
-          <div className="h-1/2 mb-36 px-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quas laboriosam ut placeat aspernatur accusantium, in doloribus labore voluptatem adipisci fuga exercitationem perferendis possimus repellendus ducimus quae illo provident tempora.
+          <div className="h-1/2 mb-36 px-7 text-center">
+            see visuale representation of your expenses and data through various charts and diagrams, to help you get 
+            certain info you might need to provide better insight about your expenses and know when you're losing/saving money.
+            powered by the charts libraries in django and the complex aggregation in the DB.
           </div>
         </motion.div>
       </div>

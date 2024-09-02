@@ -1,7 +1,22 @@
+import { useEffect, useRef } from "react";
 import cartoon3 from "../../../assets/images/cartoon3.png"
-import { motion } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 function Hero() {
+
+    const ref = useRef(null);
+    const IsInView = useInView(ref);
+    const mainControls = useAnimation();
+  
+    useEffect(() => { 
+      
+      if (IsInView){
+        mainControls.start("in");
+        mainControls.start("in2");
+        mainControls.start("in3");
+    
+      } 
+    } , [IsInView])
 
     const pageVariants = {
         initial: {
@@ -45,7 +60,7 @@ function Hero() {
     };
 
   return (
-    <section id="home" className='h-screen flex flex-row items-center justify-between overflow-x-hidden'>
+    <section ref={ref} id="home" className='h-screen flex flex-row items-center justify-between overflow-x-hidden'>
         <div className="w-1/2 h-screen pl-20 flex flex-col items-center justify-center">
             <motion.div variants={pageVariants} initial="initial" animate="in" className="justify-centertext-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                 All your financial information in one place with

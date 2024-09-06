@@ -87,7 +87,7 @@ function About() {
       <div className="flex items-center justify-center w-full h-screen ">
         <div className="w-2/3 h-full gap-5 items-start ml-5 pr-16 justify-start pt-28 justify-centertext-3xl tracking-tight leading-none text-white md:text-2xl lg:text-3xl">
             <span className=" leading-10 flex flex-col items-center">
-              <h2 className=" self-start text-5xl mb-8 font-bold">
+              <h2 className=" self-start text-5xl mb-5 font-bold">
                 Hi, I'm  
                 <span className="text-5xl text-blue-400">
                   {text}  
@@ -95,7 +95,7 @@ function About() {
                 <Cursor cursorColor="white" />
               </h2>
 
-              <motion.span variants={pageVariants} initial="initial" animate={mainControls} id="text" className="slef-start text-lg leading-10 font-semibold text-nowrap">
+              <motion.span variants={pageVariants} initial="initial" animate={mainControls} id="text" className="slef-start text-lg leading-10 ml-10 font-semibold text-nowrap">
                 <p>
                   <span className="font-bold">{circle} Country : </span> Born 2001 in Tartus,Syria .
                 </p>

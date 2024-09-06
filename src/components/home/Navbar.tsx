@@ -9,7 +9,12 @@ function Navbar() {
         </div>
         <div className="mr-10 hidden sm:block">
             <ul className="flex h-full items-center gap-8">
-                <li className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">Contact</li>
+                <li onClick={() => {
+                  const element = document.getElementById('contact')
+                  element?.scrollIntoView({
+                    behavior: 'smooth'
+                  })
+                }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">Contact</li>
                 <li onClick={() => {
                   const element = document.getElementById('projects')
                   element?.scrollIntoView({
@@ -27,7 +32,7 @@ function Navbar() {
                   element?.scrollIntoView({
                     behavior:'smooth'
                   })
-                }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">Tech</li>
+                }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">Services</li>
             </ul>
         </div>
     </div>

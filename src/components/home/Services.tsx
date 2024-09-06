@@ -80,13 +80,13 @@ function Tech() {
           </div>  
         </motion.div>
       </div>
-      <p className="w-screen text-center text-white font-semibold mt-16 mb-3">what are you waiting for ?</p>
+      <p className="w-screen text-center text-white font-semibold mt-10 mb-4">what are you waiting for ?</p>
       <a onClick={()=> {
-                  const element = document.getElementById('hero');
+                  const element = document.getElementById('contact');
                   element?.scrollIntoView({
                     behavior:'smooth'
                   })
-                }} className="ease-linear duration-300 inline-flex justify-center items-center gap-3 py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 cursor-pointer">
+                }} className="ease-linear duration-300 inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 cursor-pointer">
           Contact Me
       </a>
     </div>

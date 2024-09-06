@@ -15,6 +15,7 @@ function DemoSection() {
     if (IsInView){
       mainControls.start("in")
       mainControls.start("in2")
+      mainControls.start("in3")
     } 
   } , [IsInView])
 
@@ -47,7 +48,7 @@ function DemoSection() {
 };
 
   const pageVariants3 = {
-    initial2: {
+    initial3: {
     x: 80, 
     opacity: 0,
     },
@@ -56,7 +57,7 @@ function DemoSection() {
     opacity: 1,
     transition: {
         duration: 1.5,
-        delay:0.2 
+        // delay:0.2
     },
     },
 };
@@ -76,9 +77,15 @@ function DemoSection() {
                   </a>
               </div>
           </motion.div>
-          <div className="w-1/3 h-full mt-10 mr-10  flex items-center justify-center overflow-hidden overflow-x-hidden pb-10">
-            <motion.img variants={pageVariants2} initial="initial2" animate={mainControls}  src={m2} width={200} className="absolute" alt="" />
-            <motion.img variants={pageVariants3} initial="initial2" animate={mainControls}  src={m1} width={160} className="absolute ml-56 mt-52 object-cover" alt="" />
+          <div className="w-1/3 h-full mt-10  flex items-center justify-center overflow-hidden overflow-x-hidden pb-10">
+            <div className="flex items-center justify-center w-fit h-full ">
+              <motion.div variants={pageVariants2} initial="initial2" animate={mainControls} className=" absolute shadow-blue-shadow w-[170px] h-[400px] mr-5 z-10"></motion.div>
+              <motion.img variants={pageVariants2} initial="initial2" animate={mainControls}  src={m2} width={200} className=" absolute z-10" alt="" />
+            </div>
+            <div className="flex items-center justify-center w-fit h-full ml-32 mt-52">
+              <motion.div variants={pageVariants3} initial="initial3" animate={mainControls} className=" absolute shadow-blue-shadow w-[130px] h-[400px] mt-5 z-10"></motion.div>
+              <motion.img variants={pageVariants3} initial="initial3" animate={mainControls}  src={m1} width={160} className="absolute z-20" alt="" />
+            </div>
           </div> 
         </section>
   )

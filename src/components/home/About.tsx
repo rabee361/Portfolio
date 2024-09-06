@@ -85,11 +85,11 @@ function About() {
   return (
     <div  ref={ref} id="about" className='flex flex-col w-full h-screen'>
       <div className="flex items-center justify-center w-full h-screen ">
-        <div className="w-2/3 h-full gap-5 items-start ml-5 pr-16 justify-start pt-28 justify-centertext-3xl tracking-tight leading-none text-white md:text-2xl lg:text-3xl">
+        <div className="w-2/3 h-full gap-5 items-start ml-5 pr-16 justify-start pt-28 justify-centertext-3xl tracking-tight leading-none dark:text-white text-black md:text-2xl lg:text-3xl">
             <span className=" leading-10 flex flex-col items-center">
               <h2 className=" self-start text-5xl mb-5 font-bold">
                 Hi, I'm  
-                <span className="text-5xl text-blue-400">
+                <span className="text-5xl dark:text-blue-400 text-blue-800">
                   {text}  
                 </span>
                 <Cursor cursorColor="white" />

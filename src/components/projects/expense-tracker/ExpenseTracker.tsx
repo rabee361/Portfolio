@@ -6,7 +6,7 @@ import About from "./About"
 
 function ExpenseTracker() {
     return (
-      <div className="overflow-hidden overflow-x-hidden">
+      <div className="overflow-hidden overflow-x-hidden dark:bg-gray-900 bg-blue-200">
         <Navbar/>
         <Hero/>
         <Feauters/>

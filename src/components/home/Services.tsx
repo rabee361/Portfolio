@@ -45,8 +45,8 @@ function Tech() {
               <IoTimerOutline className="" size={50}/>
             </div>
             <div className="">
-              <p className="text-2xl mb-2 font-semibold">Commitment to deadline</p>
-              <p className="text-wrap text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque mollitia praesentium nihil aliquam, reiciendis officiis, </p>
+              <p className="text-2xl mb-2 font-semibold">Commitment to Deadline</p>
+              <p className="text-wrap text-gray-300">Building projects and Finishing tasks on time with respect to the client's needs and schedule.</p>
             </div>
           </div>
           <div className="flex gap-10 items-center">
@@ -55,7 +55,7 @@ function Tech() {
             </div>
             <div className="">
               <p className="text-2xl mb-2 font-semibold">Various Tasks</p>
-              <p className="text-wrap text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque mollitia praesentium nihil aliquam, reiciendis officiis, </p>
+              <p className="text-wrap text-gray-300">Ability to coperate on different tasks in the development life-cycle and work with team members to complete and deliver the tasks with the accuracy needed. </p>
             </div>
           </div>
         </motion.div>
@@ -66,7 +66,7 @@ function Tech() {
             </div>
             <div className="">
               <p className="text-2xl mb-2 font-semibold">Scalable Archetictures</p>
-              <p className="text-wrap text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque mollitia praesentium nihil aliquam, reiciendis officiis, </p>
+              <p className="text-wrap text-gray-300">Building Reliable, Performant and Scalable projects or microservices Scaling them to provide a fast and unique user experience</p>
             </div>
           </div>  
           <div className="flex gap-10 items-center">
@@ -75,7 +75,7 @@ function Tech() {
             </div>
             <div className="">
               <p className="text-2xl mb-2 font-semibold">Deploying on various platforms</p>
-              <p className="text-wrap text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque mollitia praesentium nihil aliquam, reiciendis officiis, </p>
+              <p className="text-wrap text-gray-300">The Ability to deploy the project on any hosting platform or service whether paid or free and managing servers on the long run to help maintaine the prject periodically.</p>
             </div>
           </div>  
         </motion.div>

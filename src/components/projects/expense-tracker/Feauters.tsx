@@ -49,7 +49,7 @@ function Feauters() {
 
 
   return (
-      <div id="features" ref={ref} className="h-screen w-full text-white flex items-center justify-evenly overflow-x-hidden">
+      <div id="features" ref={ref} className="h-screen w-full dark:text-white text-black flex items-center justify-evenly overflow-x-hidden">
         <motion.div variants={pageVariants} initial="initial" animate={mainControls} className=" flex flex-col items-center justify-center h-full w-1/4">
           <div className="h-1/2 w-full flex items-end mb-10 justify-center text-4xl font-bold">
             {/* <GiReceiveMoney size={140}/> */}

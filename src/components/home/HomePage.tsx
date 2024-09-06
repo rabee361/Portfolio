@@ -6,13 +6,13 @@ import Services from './Services'
 
 function HomePage() {
   return (
-    <>
+    <div className=' dark:bg-gray-900 bg-blue-200'>
         <Navbar/>
         <Hero/>
         <About/>
         <RecentProjects/>
         <Services/>
-    </>
+    </div>
   )
 }
 

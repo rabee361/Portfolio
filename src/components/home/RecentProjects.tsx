@@ -60,9 +60,7 @@ function RecentProjects() {
       if (IsInView){
         mainControls.start("visible")
       }
-      // else {
-      //   mainControls.set("hidden")
-      // }
+
     } , [IsInView])
   
     const variant = {
@@ -71,12 +69,12 @@ function RecentProjects() {
     }
 
     return (
-      <div ref={ref} className=' mt-60 flex flex-col items-center justify-center w-full h-screen'>
+      <div ref={ref} className=' mt-60 mb-72 flex flex-col items-center justify-center w-full h-screen'>
 
       {/* <motion.span variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.2}} className="text-center text-3xl mb-16">
             Recent Projects
       </motion.span> */}
-      <motion.span id='projects' variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.2}} className="text-center text-3xl mb-16">
+      <motion.span id='projects' variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.2}} className="text-center text-white font-bold text-3xl mb-16">
             Recent Projects
       </motion.span>
 

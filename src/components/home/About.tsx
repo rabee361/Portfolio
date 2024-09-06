@@ -1,7 +1,8 @@
-import { motion , useInView , useAnimation, useMotionValue, animate, useTransform } from "framer-motion"
+import { motion , useInView , useAnimation } from "framer-motion"
 import { useRef , useEffect } from "react"
 import main1 from "../../assets/images/main1.png"
 import main2 from "../../assets/images/main2.png"
+import { Cursor , useTypewriter } from "react-simple-typewriter"
 
 function About() {
   const ref = useRef(null);
@@ -21,6 +22,22 @@ function About() {
     // }
   } , [IsInView])
 
+
+  
+  const pageVariants = {
+    initial: {
+    x: "-10%", 
+    opacity: 0,
+    },
+    in: {
+    x: "0%", 
+    opacity: 1,
+    transition: {
+        duration: 1, 
+    },
+    },
+};
+  
 
   
   const pageVariants2 = {
@@ -51,47 +68,55 @@ function About() {
     },
     },
 };
-  
+
+  let peace = String.fromCodePoint(9996	)
+  let circle = String.fromCodePoint(128311)
+
+  const [text] = useTypewriter({
+    words: [` Rabee ${peace}` ,` a Software Engineer` , ` a Back-End Developer`],
+    loop: true,
+    typeSpeed: 80,
+    deleteSpeed: 60,
+    delaySpeed: 2000
+  })
 
 
-const cursorVariants = {
-  blinking: {
-    opacity: [0, 0, 1, 1],
-    transition: {
-      duration: 1,
-      repeat: Infinity,
-      repeatDelay: 0,
-      ease: "linear",
-      times: [0, 0.5, 0.5, 1]
-    }
-  }
-};
-
-
-const baseText = "I'm a Back-end developer with a degree in Informatin Technology from Al-Baath university in Homs, Syria. with 2 years of experience in building fast, performent and scalable APIs and Full-stack applications using tech stacks like Django, React js, Nest js and deploying them on a variety of free/paid platforms";
-const count = useMotionValue(0);
-const rounded = useTransform(count, (latest) => Math.round(latest));
-const displayText = useTransform(rounded, (latest) =>
-  baseText.slice(0, latest)
-);
-
-useEffect(() => {
-  const controls = animate(count, baseText.length, {
-    type: "tween", // Not really needed because adding a duration will force "tween"
-    duration: 6,
-    ease: "easeInOut",
-  });
-  return controls.stop;
-}, []);
 
   return (
     <div  ref={ref} id="about" className='flex flex-col w-full h-screen'>
       <div className="flex items-center justify-center w-full h-screen ">
-        <div className="w-2/3 h-full gap-5 items-start ml-5 pr-16 justify-start pt-40 justify-centertext-3xl font-bold tracking-tight leading-none text-white md:text-2xl lg:text-3xl">
-            <motion.span className=" leading-10">
-              {displayText}
-            </motion.span>
-          <motion.div variants={cursorVariants} animate="blinking" className="inline-block h-7 w-[5px] translate-y-1 "></motion.div>
+        <div className="w-2/3 h-full gap-5 items-start ml-5 pr-16 justify-start pt-28 justify-centertext-3xl tracking-tight leading-none text-white md:text-2xl lg:text-3xl">
+            <span className=" leading-10 flex flex-col items-center">
+              <h2 className=" self-start text-5xl mb-8 font-bold">
+                Hi, I'm  
+                <span className="text-5xl text-blue-400">
+                  {text}  
+                </span>
+                <Cursor cursorColor="white" />
+              </h2>
+
+              <motion.span variants={pageVariants} initial="initial" animate={mainControls} id="text" className="slef-start text-lg leading-10 font-semibold text-nowrap">
+                <p>
+                  <span className="font-bold">{circle} Country : </span> Born 2001 in Tartus,Syria .
+                </p>
+                <p>
+                  <span className="font-bold">{circle} Education : </span> A Bachelor Degree in IT from Albaath University in Homs,Syria.
+                </p>
+                <p>
+                  <span className="font-bold">{circle} Experience : </span> 2 years of experience in building applications and websites specializing in Back-End development.
+                </p>
+                <p>
+                  <span className="font-bold">{circle} Languages : </span>Fluent in Arabic and English
+                </p>
+                <p className="text-wrap">
+                  <span className="font-bold">{circle} Projects : </span> Danac E-Store and Employee management system, Expense-Tracker App, Al-Noor haj App and handful of training projects.
+                </p>
+                <p>
+                  <span className="font-bold">{circle} Skills : </span> Python, JS, Django, React js, Nest js, Redis, Linux, Nginx and more.
+                </p>
+
+              </motion.span>
+            </span>
 
         </div>
         <div className="flex items-center justify-end pr-20 h-full w-1/3">

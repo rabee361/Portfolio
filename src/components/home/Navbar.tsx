@@ -23,7 +23,7 @@ function Navbar() {
                   })
                 }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">About</li>
                 <li  onClick={()=> {
-                  const element = document.getElementById('tech');
+                  const element = document.getElementById('services');
                   element?.scrollIntoView({
                     behavior:'smooth'
                   })

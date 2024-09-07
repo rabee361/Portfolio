@@ -101,12 +101,12 @@ function RecentProjects() {
               <h5 className="text-black font-medium">
                 {element.location}
               </h5>
-              <p className='text-black' >
+              <p className='text-black text-wrap' >
                 {element.description}
               </p>
 
-              <div className='relative top-4 flex gap-6 items-end'>
-                <div className=' w-full flex gap-4'>
+              <div className='relative top-4 flex flex-col sm:flex-col sm:gap-6 items-end'>
+                <div className=' w-full flex gap-4 text-wrap'>
                   {
                     element.tech.map((x) => (
                       techs[x.name]
@@ -118,7 +118,7 @@ function RecentProjects() {
                   <a
                     className={`button ${
                       isDjangoIcon ? "workButton" : "schoolButton"
-                    } text-black text-nowrap self-end rounded-md font-medium bg-blue-400 hover:bg-blue-500 pl-4 pr-4 pt-1 pb-1  shadow-lg hover:shadow-none transition-all ease-linear duration-100`}
+                    } text-black text-nowrap sm:self-end self-center rounded-md font-medium bg-blue-400 hover:bg-blue-500 pl-4 pr-4 pt-1 pb-1 mt-10 sm:mt-0 shadow-lg hover:shadow-none transition-all ease-linear duration-100`}
                     href="/"
                   >
                     <Link  onClick={scrollToTop} to="/expense-tracker">{element.buttonText}</Link>
@@ -126,9 +126,6 @@ function RecentProjects() {
                   </a>
                 )}
               </div>
-
-
-              
             </div>
             </VerticalTimelineElement>
           );

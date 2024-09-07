@@ -64,7 +64,7 @@ function Hero() {
   return (
     <section ref={ref} id="home" className='h-screen flex flex-row items-center justify-between overflow-x-hidden'>
         <div className="w-1/2 h-screen pl-20 flex flex-col items-center justify-center">
-            <motion.div variants={pageVariants} initial="initial" animate="in" className="justify-centertext-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+            <motion.div variants={pageVariants} initial="initial" animate="in" className="justify-centertext-4xl font-extrabold tracking-tight leading-none dark:text-white text-black md:text-5xl lg:text-6xl">
                 All your financial information in one place with
                 <motion.small variants={pageVariants3} initial="initial3" animate="in3" className=" font-extrabold text-blue-500 md:text-5xl lg:text-6xl ml-2">
                     Wallet

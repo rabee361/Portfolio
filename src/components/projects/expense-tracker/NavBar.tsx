@@ -28,7 +28,7 @@ function Navbar() {
   };
 
     return (
-      <div className=" fixed top-0 z-10 flex justify-between h-14 w-full text-white font-medium">
+      <div className=" fixed top-0 z-10 flex justify-between h-14 w-full dark:text-white text-black font-medium">
           <div className="flex h-full items-center ml-5 gap-5">
               wallet
               <label className="swap swap-rotate">

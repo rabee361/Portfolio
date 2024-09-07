@@ -37,9 +37,9 @@ function Hero() {
     };
         
   return (
-    <div id='contact' className='w-screen h-screen flex flex-col gap-1 sm:gap-5  items-center justify-center dark:text-white text-black '>
+    <div id='contact' className='w-full h-screen flex flex-col gap-1 sm:gap-5  items-center justify-center dark:text-white text-black '>
       <motion.div variants={pageVariants2} initial="initial" animate="in"  className='avatar rounded-full'>
-        <div className=' w-20 sm:w-44 rounded-full shadow-blue-shadow '>
+        <div className=' w-20 sm:w-44 rounded-full dark:shadow-dark-blue-shadow '>
           <img src={img} />
         </div>
       </motion.div>

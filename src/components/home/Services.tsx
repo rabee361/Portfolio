@@ -80,7 +80,7 @@ function Tech() {
           </div>
         </motion.div>
       </div>
-      <p className="w-screen text-center text-white font-semibold mt-10 mb-4">what are you waiting for ?</p>
+      <p className="w-screen text-center text-white font-semibold mt-3 mb-4">what are you waiting for ?</p>
       <a onClick={()=> {
                   const element = document.getElementById('contact');
                   element?.scrollIntoView({

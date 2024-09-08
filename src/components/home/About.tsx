@@ -85,17 +85,17 @@ function About() {
   return (
     <div  ref={ref} id="about" className='flex flex-col w-full h-screen'>
       <div className="flex lg:flex-row flex-col items-center justify-center w-full h-screen ">
-        <div className="w-2/3 h-full gap-5 items-start ml-5 pr-16 justify-start pt-28 justify-centertext-3xl tracking-tight leading-none dark:text-white text-black md:text-2xl lg:text-3xl">
-            <span className=" leading-10 flex flex-col items-center text-center">
-              <h2 className="self-start lg:text-5xl text-2xl mb-5 font-bold">
+        <div className="lg:w-2/3 w-screen h-full gap-5 items-start ml-5 pr-16 justify-start pt-28 justify-centertext-3xl tracking-tight leading-none dark:text-white text-black md:text-2xl lg:text-3xl">
+            <span className="leading-10 flex flex-col items-center">
+              <h2 className="w-full text-center lg:text-left self-start lg:text-5xl text-2xl mb-5 font-bold">
                 Hi, I'm  
                 <span className=" dark:text-blue-400 text-blue-800">
-                  {text}  
+                  {text}
                 </span>
                 <Cursor cursorColor="white" />
               </h2>
 
-              <motion.span variants={pageVariants} initial="initial" animate={mainControls} id="text" className="hidden lg:flex lg:flex-col self-start text-lg leading-10 font-semibold lg:text-nowrap">
+              <motion.span variants={pageVariants} initial="initial" animate={mainControls} id="text" className="lg:flex lg:flex-col self-start text-lg text-center lg:text-left leading-10 font-semibold lg:text-nowrap">
                 <p>
                   <span className="font-bold">{circle} Country : </span> Born 2001 in Tartus,Syria .
                 </p>

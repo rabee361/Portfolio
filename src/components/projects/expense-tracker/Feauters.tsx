@@ -63,7 +63,7 @@ function Feauters() {
         <motion.div variants={pageVariants} initial="initial" animate={mainControls} className="flex flex-col items-end justify-center h-full w-1/4">
           <div className="h-1/2 w-full flex items-end mb-10 justify-center text-4xl text-center font-bold">
               {/* <IoIosNotificationsOutline size={140}/> */}
-              <img src={bell} width={100} alt="" />
+              <img src={bell} className="text-red-800" width={100} alt="" />
           </div>
           <div className="h-1/2 mb-36 px-7 text-center">
           see visuale representation of your expenses and data through various charts and diagrams, to help you get 

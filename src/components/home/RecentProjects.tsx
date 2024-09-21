@@ -74,7 +74,7 @@ function RecentProjects() {
       {/* <motion.span variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.2}} className="text-center text-3xl mb-16">
             Recent Projects
       </motion.span> */}
-      <motion.span id='projects' variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.2}} className="text-center text-white font-bold text-3xl mb-16">
+      <motion.span id='projects' variants={variant} initial="hidden" animate={mainControls} transition={{duration:0.5 , delay:0.2}} className="text-center text-[#201E43] dark:text-white font-bold text-3xl mb-16">
             Recent Projects
       </motion.span>
 
@@ -88,20 +88,20 @@ function RecentProjects() {
 
           return (
             <VerticalTimelineElement
-            className='text-white'
+            className='dark:text-white text-[#201E43]'
             key={element.id}
             date={element.date}
             iconStyle={IconStyle}
             icon={icons[element.icon]}
             >
             <div className='flex flex-col gap-1'>
-              <h3 className="text-black font-medium text-xl">
+              <h3 className="text-[#201E43] dark:text-black font-medium text-xl">
                 {element.title}
               </h3>
-              <h5 className="text-black font-medium">
+              <h5 className="text-[#201E43] dark:text-black font-medium">
                 {element.location}
               </h5>
-              <p className='text-black text-wrap' >
+              <p className='text-[#201E43] dark:text-black text-wrap' >
                 {element.description}
               </p>
 
@@ -118,7 +118,7 @@ function RecentProjects() {
                   <a
                     className={`button ${
                       isDjangoIcon ? "workButton" : "schoolButton"
-                    } text-black text-nowrap sm:self-end self-center rounded-md font-medium bg-blue-400 hover:bg-blue-500 pl-4 pr-4 pt-1 pb-1 mt-10 sm:mt-0 shadow-lg hover:shadow-none transition-all ease-linear duration-100`}
+                    } dark:text-black text-nowrap sm:self-end self-center rounded-md font-medium bg-[#508C9B] text-[#EEEEEE] dark:bg-blue-400 hover:bg-blue-500 pl-4 pr-4 pt-1 pb-1 mb-3 mt-10 sm:mt-0 shadow-lg hover:shadow-none transition-all ease-linear duration-100`}
                     href="/"
                   >
                     <Link  onClick={scrollToTop} to="/expense-tracker">{element.buttonText}</Link>

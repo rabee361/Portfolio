@@ -84,12 +84,12 @@ function About() {
 
   return (
     <div  ref={ref} id="about" className='flex flex-col w-full h-screen'>
-      <div className="flex lg:flex-row flex-col items-center justify-center w-full h-screen ">
-        <div className="lg:w-4/6 w-screen h-1/2 lg:h-screen lg:gap-5 flex flex-col ml-5 lg:pt-28 pt-5 justify-centertext-3xl leading-none dark:text-white text-black md:text-2xl lg:text-3xl">
+      <div className="flex lg:flex-row flex-col items-center justify-center w-full h-screen">
+        <div className="lg:w-4/6 w-screen h-1/2 lg:h-screen lg:gap-5 flex flex-col ml-5 lg:pt-28 pt-5 justify-centertext-3xl leading-none dark:text-white text-[#201E43] md:text-2xl lg:text-3xl">
             <span className="leading-10 flex flex-col items-center">
               <h2 className="w-full text-center lg:text-left self-start lg:text-5xl text-2xl mb-5 font-bold">
                 Hi, I'm
-                <span className=" dark:text-blue-400 text-blue-800">
+                <span className=" dark:text-blue-400 text-[#508C9B]">
                   {text}
                 </span>
                 <Cursor cursorColor="white" />
@@ -123,7 +123,7 @@ function About() {
 
         </div>
         <div className="flex items-center justify-center lg:justify-end mb-24 lg:pr-20 h-1/2 w-full lg:w-2/6">
-          <motion.div variants={pageVariants2} initial="initial2" animate={mainControls} className=" absolute dark:shadow-dark-blue-shadow w-[120px] lg:w-[365px] lg:h-[235px]"></motion.div>
+          <motion.div variants={pageVariants2} initial="initial2" animate={mainControls} className=" absolute shadow-blue-shadow dark:shadow-dark-blue-shadow w-[120px] lg:w-[365px] lg:h-[235px]"></motion.div>
           <motion.img variants={pageVariants2} initial="initial2" animate={mainControls}  src={main2} className=" absolute w-[250px] lg:w-[400px]"  alt="" />
           <motion.img variants={pageVariants3} initial="initial3" animate={mainControls}  src={main1} className=" absolute w-[70px] ml-[240px] lg:w-[110px]" alt="" />
         </div> 

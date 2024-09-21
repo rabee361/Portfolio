@@ -27,12 +27,12 @@ function Navbar() {
   };
 
   return (
-    <div className=" fixed top-0 flex justify-between h-14 w-full dark:text-white text-black font-medium z-10">
+    <div className=" fixed top-0 flex justify-between h-14 w-full dark:text-white text-[#201E43] font-medium z-10">
         <div className="sm:flex w-full flex justify-between sm:justify-start sm:h-full sm:items-center sm:ml-5 sm:gap-5">
             <span className="ml-5 mt-6 sm:ml-0 sm:mt-0">
               Rabee Hasan
             </span>
-            <label className="swap swap-rotate mr-5 mt-2 sm:mr-0 sm:mt-0">
+            <label className="swap swap-rotate mr-5 mt-2 sm:mr-0 sm:mt-0 dark:hover:text-blue-400 hover:text-[#508C9B] ease-linear duration-100">
               {/* this hidden checkbox controls the state */}
               <input type="checkbox" className="theme-controller" value="synthwave" checked={dark} onClick={()=> darkModeHandler()} />
               {/* sun icon */}
@@ -42,31 +42,31 @@ function Navbar() {
             </label>
         </div>
         <div className="mr-10 hidden sm:block">
-            <ul className="flex h-full items-center gap-8">
+            <ul className="flex h-full items-center gap-8 ">
                 <li onClick={() => {
                   const element = document.getElementById('contact')
                   element?.scrollIntoView({
                     behavior: 'smooth'
                   })
-                }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">Contact</li>
+                }} className="text-[#201E43] dark:text-white hover:text-[#508C9B] dark:hover:text-blue-300 ease-linear duration-100 cursor-pointer">Contact</li>
                 <li onClick={() => {
                   const element = document.getElementById('projects')
                   element?.scrollIntoView({
                     behavior: 'smooth'
                   })
-                }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">Projects</li>
+                }} className="text-[#201E43] dark:text-white hover:text-[#508C9B] dark:hover:text-blue-300 ease-linear duration-100 cursor-pointer">Projects</li>
                 <li  onClick={()=> {
                   const element = document.getElementById('about');
                   element?.scrollIntoView({
                     behavior:'smooth'
                   })
-                }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">About</li>
+                }} className="text-[#201E43] dark:text-white hover:text-[#508C9B] dark:hover:text-blue-300 ease-linear duration-100 cursor-pointer">About</li>
                 <li  onClick={()=> {
                   const element = document.getElementById('services');
                   element?.scrollIntoView({
                     behavior:'smooth'
                   })
-                }} className="hover:text-blue-300 ease-linear duration-100 cursor-pointer">Services</li>
+                }} className="text-[#201E43] dark:text-white hover:text-[#508C9B] dark:hover:text-blue-300 ease-linear duration-100 cursor-pointer">Services</li>
             </ul>
         </div>
     </div>

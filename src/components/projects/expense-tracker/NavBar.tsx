@@ -30,7 +30,7 @@ function Navbar() {
     return (
       <div className=" fixed top-0 z-10 flex justify-between h-14 w-full dark:text-white text-black font-medium">
           <div className="flex h-full items-center ml-5 gap-5">
-              wallet
+              Rabee Hasan
               <label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}
                 <input type="checkbox" className="theme-controller" value="synthwave" checked={dark} onClick={()=> darkModeHandler()} />

@@ -80,11 +80,11 @@ function DemoSection() {
           <div className="w-1/3 h-full mt-10  flex items-center justify-center overflow-hidden overflow-x-hidden pb-10">
             <div className="flex items-center justify-center w-fit h-full ">
               <motion.div variants={pageVariants2} initial="initial2" animate={mainControls} className=" absolute dark:shadow-dark-blue-shadow  w-[170px] h-[400px] mr-5 z-10"></motion.div>
-              <motion.img variants={pageVariants2} initial="initial2" animate={mainControls}  src={m2} width={200} className=" absolute z-10" alt="" />
+              <motion.img variants={pageVariants2} initial="initial2" animate={mainControls}  src={m2} width={200} className=" absolute z-10" alt="test" />
             </div>
             <div className="flex items-center justify-center w-fit h-full ml-32 mt-52">
               <motion.div variants={pageVariants3} initial="initial3" animate={mainControls} className=" absolute dark:shadow-dark-blue-shadow w-[130px] h-[400px] mt-5 z-10"></motion.div>
-              <motion.img variants={pageVariants3} initial="initial3" animate={mainControls}  src={m1} width={160} className="absolute z-20" alt="" />
+              <motion.img variants={pageVariants3} initial="initial3" animate={mainControls}  src={m1} width={160} className="absolute z-20" alt="test" />
             </div>
           </div> 
         </section>

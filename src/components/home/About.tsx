@@ -124,8 +124,8 @@ function About() {
         </div>
         <div className="flex items-center justify-center lg:justify-end mb-24 lg:pr-20 h-1/2 w-full lg:w-2/6">
           <motion.div variants={pageVariants2} initial="initial2" animate={mainControls} className=" absolute shadow-blue-shadow dark:shadow-dark-blue-shadow w-[120px] lg:w-[365px] lg:h-[235px]"></motion.div>
-          <motion.img variants={pageVariants2} initial="initial2" animate={mainControls}  src={main2} className=" absolute w-[250px] lg:w-[400px]"  alt="" />
-          <motion.img variants={pageVariants3} initial="initial3" animate={mainControls}  src={main1} className=" absolute w-[70px] ml-[240px] lg:w-[110px]" alt="" />
+          <motion.img variants={pageVariants2} initial="initial2" animate={mainControls}  src={main2} alt="main2" className=" absolute w-[250px] lg:w-[400px]" />
+          <motion.img variants={pageVariants3} initial="initial3" animate={mainControls}  src={main1} alt="main1" className=" absolute w-[70px] ml-[240px] lg:w-[110px]" />
         </div> 
       </div>
     </div>

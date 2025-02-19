@@ -81,12 +81,7 @@ function Tech() {
         </motion.div>
       </div>
       <p className="w-screen text-center text-[#508C9B] dark:text-white font-semibold mt-3 mb-4">what are you waiting for ?</p>
-      <a onClick={()=> {
-                  const element = document.getElementById('contact');
-                  element?.scrollIntoView({
-                    behavior:'smooth'
-                  })
-                }} className="ease-linear duration-300 inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center dark:text-white text-[#EEEEEE] rounded-lg bg-[#134B70] hover:bg-[#201E43] dark:bg-blue-500 dark:hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 cursor-pointer">
+      <a href="#contact" className="ease-linear duration-300 inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center dark:text-white text-[#EEEEEE] rounded-lg bg-[#134B70] hover:bg-[#201E43] dark:bg-blue-500 dark:hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 cursor-pointer">
           Contact Me
       </a>
     </div>

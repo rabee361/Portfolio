@@ -82,7 +82,7 @@ function Hero() {
             </motion.div>
         </div>
         <motion.div variants={pageVariants2} initial="initial2" animate="in2" className="w-1/2 h-screen lg:flex items-center justify-center overflow-x-hidden hidden">
-            <img className="w-4/5 h-fit" src={cartoon3} alt="" />
+            <img className="w-4/5 h-fit" src={cartoon3} alt="test" />
         </motion.div>
     </section>
   )

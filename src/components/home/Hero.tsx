@@ -40,7 +40,7 @@ function Hero() {
     <div id='contact' className='w-full h-screen flex flex-col gap-1 sm:gap-5  items-center justify-center dark:text-white text-black '>
       <motion.div variants={pageVariants2} initial="initial" animate="in"  className='avatar rounded-full'>
         <div className=' w-20 sm:w-44 rounded-full shadow-blue-shadow dark:shadow-dark-blue-shadow '>
-          <img src={img} />
+          <img src={img} alt="hero image" />
         </div>
       </motion.div>
       <motion.p variants={pageVariants} initial="initial" animate="in" className='flex items-center text-[#201E43] dark:text-white justify-center text-3xl sm:text-8xl text-nowrap font-bold'><span className='bg-gradient-to-r from-[#508C9B] via-[#134B70] to-[#201E43] dark:from-blue-400 dark:via-blue-500 dark:to-blue-600 text-transparent bg-clip-text ml-1 sm:ml-3'>Rabee</span>Hasan</motion.p>

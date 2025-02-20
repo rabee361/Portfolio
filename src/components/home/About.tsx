@@ -85,38 +85,54 @@ function About() {
   return (
     <div  ref={ref} id="about" className='flex flex-col w-full h-screen'>
       <div className="flex lg:flex-row flex-col items-center justify-center w-full h-screen">
-        <div className="lg:w-4/6 w-screen h-1/2 lg:h-screen lg:gap-5 flex flex-col ml-5 lg:pt-28 pt-5 justify-centertext-3xl leading-none dark:text-white text-[#201E43] md:text-2xl lg:text-3xl">
+        <div className="lg:w-4/6 w-screen h-1/2 lg:h-screen lg:gap-5 flex flex-col ml-5 lg:pt-28 pt-5 justify-center text-3xl leading-none dark:text-white text-[#201E43] md:text-2xl lg:text-3xl">
             <span className="leading-10 flex flex-col items-center">
-              <h2 className="w-full text-center lg:text-left self-start lg:text-5xl text-2xl mb-5 font-bold">
+              <h2 className="w-full text-center lg:text-left self-start lg:text-6xl text-3xl mb-8 font-bold tracking-tight">
                 Hi, I'm
-                <span className=" dark:text-blue-400 text-[#508C9B]">
+                <span className="dark:text-blue-400 text-[#508C9B] ml-2">
                   {text}
                 </span>
                 <Cursor cursorColor="white" />
               </h2>
 
-              <motion.span variants={pageVariants} initial="initial" animate={mainControls} id="text" className="hidden lg:flex lg:flex-col lg:w-full self-start text-lg text-center lg:text-left leading-10 font-semibold whitespace-pre-wrap lg:text-wrap">
-                <p>
-                  <span className="font-bold">{circle} Country : </span> Born 2001 in Tartus,Syria .
+              <motion.span 
+                variants={pageVariants} 
+                initial="initial" 
+                animate={mainControls} 
+                className="hidden lg:flex lg:flex-col lg:w-full self-start text-lg text-center lg:text-left leading-loose font-medium space-y-4"
+              >
+                <p className="hover:translate-x-2 transition-transform duration-300 ease-in-out">
+                  <span className="font-bold text-[#508C9B] dark:text-blue-400">{circle} Country: </span> 
+                  <span className="text-gray-700 dark:text-gray-300">Born 2001 in Tartus, Syria</span>
                 </p>
-                <p>
-                  <span className="font-bold">{circle} Education : </span> A Bachelor Degree in IT from Albaath University in Homs,Syria.
+                <p className="hover:translate-x-2 transition-transform duration-300 ease-in-out">
+                  <span className="font-bold text-[#508C9B] dark:text-blue-400">{circle} Education: </span>
+                  <span className="text-gray-700 dark:text-gray-300">A Bachelor Degree in IT from Albaath University in Homs, Syria</span>
                 </p>
-                <p>
-                  <span className="font-bold">{circle} Experience : </span> 2 years of experience in building applications and websites specializing in Back-End development.
+                <p className="hover:translate-x-2 transition-transform duration-300 ease-in-out">
+                  <span className="font-bold text-[#508C9B] dark:text-blue-400">{circle} Experience: </span>
+                  <span className="text-gray-700 dark:text-gray-300">2 years of experience in building applications and websites specializing in Back-End development</span>
                 </p>
-                <p>
-                  <span className="font-bold">{circle} Languages : </span>Fluent in Arabic and English
+                <p className="hover:translate-x-2 transition-transform duration-300 ease-in-out">
+                  <span className="font-bold text-[#508C9B] dark:text-blue-400">{circle} Languages: </span>
+                  <span className="text-gray-700 dark:text-gray-300">Fluent in Arabic and English</span>
                 </p>
-                <p className="lg:text-wrap">
-                  <span className="font-bold">{circle} Projects : </span> Danac E-Store and Employee management system, Expense-Tracker App, Al-Noor haj App and a handful of training projects.
+                <p className="hover:translate-x-2 transition-transform duration-300 ease-in-out lg:text-wrap">
+                  <span className="font-bold text-[#508C9B] dark:text-blue-400">{circle} Projects: </span>
+                  <span className="text-gray-700 dark:text-gray-300">Danac E-Store and Employee management system, Expense-Tracker App, Al-Noor haj App and a handful of training projects</span>
                 </p>
-                <p>
-                  <span className="font-bold">{circle} Skills : </span> Python, JS, Django, React js, Nest js, Redis, Linux, Nginx and more.
+                <p className="hover:translate-x-2 transition-transform duration-300 ease-in-out">
+                  <span className="font-bold text-[#508C9B] dark:text-blue-400">{circle} Skills: </span>
+                  <span className="text-gray-700 dark:text-gray-300">Python, JS, Django, React js, Nest js, Redis, Linux, Nginx and more</span>
                 </p>
-
               </motion.span>
-              <motion.span variants={pageVariants} initial="initial" animate={mainControls} id="text" className="flex flex-col lg:hidden px-5 lg:self-start text-sm text-center lg:text-left leading-5 lg:text-nowrap">
+
+              <motion.span 
+                variants={pageVariants} 
+                initial="initial" 
+                animate={mainControls} 
+                className="flex flex-col lg:hidden px-6 py-4 lg:self-start text-base text-center lg:text-left leading-relaxed bg-gray-50 dark:bg-gray-800/50 rounded-xl shadow-sm"
+              >
                 I'm a Software Developer specializing in building Back-End applications with frameworks like Django/Nest JS/FAST Api and others, with experience in Basic Front-End frameworks like React JS and Tailwind CSS 
               </motion.span>
             </span>

@@ -17,9 +17,7 @@ function About() {
       mainControls.start("in2")
       mainControls.start("in3")
     } 
-    // else {
-    //   mainControls.set("hidden")
-    // }
+
   } , [IsInView])
 
 
@@ -95,8 +93,8 @@ function About() {
                 <Cursor cursorColor="white" />
               </h2>
 
-              <motion.span 
-                variants={pageVariants} 
+              <motion.span  
+                variants={pageVariants}
                 initial="initial" 
                 animate={mainControls} 
                 className="hidden lg:flex lg:flex-col lg:w-full self-start text-lg text-center lg:text-left leading-loose font-medium space-y-4"

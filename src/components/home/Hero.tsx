@@ -87,11 +87,31 @@ function Hero() {
         className='pt-10'
       >
           <ul className='flex gap-5 sm:gap-10 dark:text-white text-[#201E43] transition-colors duration-500 ease-in-out'> 
-              <li><a href="https://github.com/rabee361"><FaGithub className='size-5 sm:size-9'/></a></li>
-              <li><a href="rha60540@gmail.com"><MdEmail className='size-5 sm:size-9'/></a></li>
-              <li><a href="http://linkedin.com/in/rabee-hasan-145487269"><FaLinkedin className='size-5 sm:size-9'/></a></li>
-              <li><a href=""><FaSquareFacebook className='size-5 sm:size-9'/></a></li>
-              <li><a href=""><FaWhatsapp className='size-5 sm:size-9'/></a></li>
+              <li>
+                <a href="https://github.com/rabee361" className="block transition-all duration-300 hover:scale-125 hover:text-[#508C9B] dark:hover:text-blue-400 relative group">
+                  <FaGithub className='size-5 sm:size-9'/>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:rha60540@gmail.com" className="block transition-all duration-300 hover:scale-125 hover:text-[#508C9B] dark:hover:text-blue-400 relative group">
+                  <MdEmail className='size-5 sm:size-9'/>
+                </a>
+              </li>
+              <li>
+                <a href="http://linkedin.com/in/rabee-hasan-145487269" className="block transition-all duration-300 hover:scale-125 hover:text-[#508C9B] dark:hover:text-blue-400 relative group">
+                  <FaLinkedin className='size-5 sm:size-9'/>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="block transition-all duration-300 hover:scale-125 hover:text-[#508C9B] dark:hover:text-blue-400 relative group">
+                  <FaSquareFacebook className='size-5 sm:size-9'/>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="block transition-all duration-300 hover:scale-125 hover:text-[#508C9B] dark:hover:text-blue-400 relative group">
+                  <FaWhatsapp className='size-5 sm:size-9'/>
+                </a>
+              </li>
           </ul>
       </motion.div>
     </div>

@@ -19,10 +19,16 @@ export default {
           '50%': {
             boxShadow: '0 0 20px rgba(80,140,155,0.4), 0 0 40px rgba(19,75,112,0.3), 0 0 60px rgba(32,30,67,0.2)',
           }
+        },
+        'drift': {
+          '0%': { transform: 'translate(0, 0)' },
+          '50%': { transform: 'translate(-20px, -20px)' },
+          '100%': { transform: 'translate(0, 0)' }
         }
       },
       animation: {
         'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
+        'drift': 'drift 20s ease-in-out infinite',
       }
     },
   },

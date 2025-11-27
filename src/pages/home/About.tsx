@@ -1,5 +1,5 @@
 import { motion, useInView, useAnimation } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, ReactNode } from "react";
 import {
   FaMapMarkerAlt,
   FaGraduationCap,
@@ -56,7 +56,7 @@ function About() {
         animate={mainControls}
         className="font-outfit w-full max-w-6xl px-6 flex flex-col items-center gap-12"
       >
- 
+
         {/* Text Content */}
         <div className="flex flex-col items-center text-center space-y-8 max-w-4xl">
           <motion.div variants={itemVariants} className="space-y-4">
@@ -111,7 +111,13 @@ function About() {
 }
 
 // Helper Component for Cards
-function InfoCard({ icon, label, value }) {
+interface InfoCardProps {
+  icon: ReactNode;
+  label: string;
+  value: string;
+}
+
+function InfoCard({ icon, label, value }: InfoCardProps) {
   return (
     <motion.div
       whileHover={{ y: -5 }}

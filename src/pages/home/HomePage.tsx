@@ -2,8 +2,8 @@
 import About from './About'
 import Hero from './Hero'
 import Navbar from './Navbar'
-import Services from './Services'
 import Projects from './Projects'
+import Skills from './Skills'
 
 function HomePage() {
   return (
@@ -11,8 +11,8 @@ function HomePage() {
         <Navbar/>
         <Hero/>
         <About/>
+        <Skills/>
         <Projects/>
-        <Services/>
     </div>
   )
 }

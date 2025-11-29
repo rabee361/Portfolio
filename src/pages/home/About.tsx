@@ -94,11 +94,6 @@ function About() {
               value="Arabic & English"
             />
             <InfoCard
-              icon={<FaLaptopCode />}
-              label="Projects"
-              value="E-Store, EMS, Finance Apps"
-            />
-            <InfoCard
               icon={<FaTools />}
               label="Tech Stack"
               value="Python, Django, React, Redis"

@@ -66,7 +66,6 @@ function Navbar() {
       <li onClick={() => scrollToSection('contact')} className="text-[#201E43] dark:text-white hover:text-[#508C9B] dark:hover:text-blue-300 ease-linear duration-100 cursor-pointer">Contact</li>
       <li onClick={() => scrollToSection('projects')} className="text-[#201E43] dark:text-white hover:text-[#508C9B] dark:hover:text-blue-300 ease-linear duration-100 cursor-pointer">Projects</li>
       <li onClick={() => scrollToSection('about')} className="text-[#201E43] dark:text-white hover:text-[#508C9B] dark:hover:text-blue-300 ease-linear duration-100 cursor-pointer">About</li>
-      <li onClick={() => scrollToSection('services')} className="text-[#201E43] dark:text-white hover:text-[#508C9B] dark:hover:text-blue-300 ease-linear duration-100 cursor-pointer">Services</li>
     </>
   );
 

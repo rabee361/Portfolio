@@ -5,7 +5,6 @@ import {
   FaGraduationCap,
   FaBriefcase,
   FaLanguage,
-  FaLaptopCode,
   FaTools
 } from "react-icons/fa";
 

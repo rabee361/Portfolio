@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaFileDownload } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import Aurora from './Aurora';
+import Plasma from './Plasma';
 
 function Hero() {
   const pageVariants = {
@@ -51,13 +51,15 @@ function Hero() {
 
   return (
     <div id='contact' className='relative w-full h-screen flex flex-col gap-1 sm:gap-5 items-center justify-center dark:text-white text-black transition-colors duration-500 ease-in-out overflow-hidden'>
-      {/* Aurora Background Effect */}
+      {/* Plasma Background Effect */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
-        <Aurora
-          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
+        <Plasma
+          color="#0a4d68"
+          speed={0.6}
+          direction="forward"
+          scale={1.1}
+          opacity={0.5}
+          mouseInteractive={true}
         />
       </div>
 
@@ -85,7 +87,7 @@ function Hero() {
         animate="in"
         className='text-sm sm:text-xl text-[#201E43] dark:text-white text-center transition-colors duration-500 ease-in-out relative z-10'
       >
-        Software Engineer @ nizam.ae | Back-end Developer | Freelancer
+        Software Engineer @ nizam.ae | Back-end Developer | Tech Enthusiast
       </motion.span>
       <motion.div
         variants={pageVariants}
@@ -107,6 +109,11 @@ function Hero() {
           <li>
             <a href="http://linkedin.com/in/rabee-hasan-145487269" className="block transition-all duration-300 hover:scale-125 hover:text-[#508C9B] dark:hover:text-blue-400 relative group">
               <FaLinkedin className='size-5 sm:size-9' />
+            </a>
+          </li>
+          <li>
+            <a href="/src/assets/files/cv.pdf" download="Rabee_Hasan_CV.pdf" className="block transition-all duration-300 hover:scale-125 hover:text-[#508C9B] dark:hover:text-blue-400 relative group">
+              <FaFileDownload className='size-5 sm:size-8' />
             </a>
           </li>
         </ul>

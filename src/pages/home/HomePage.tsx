@@ -2,7 +2,7 @@
 import About from './About'
 import Hero from './Hero'
 import Navbar from './Navbar'
-import Projects from './Projects'
+// import Projects from './Projects'
 import Skills from './Skills'
 
 function HomePage() {
@@ -12,7 +12,7 @@ function HomePage() {
         <Hero/>
         <About/>
         <Skills/>
-        <Projects/>
+        {/* <Projects/> */}
     </div>
   )
 }

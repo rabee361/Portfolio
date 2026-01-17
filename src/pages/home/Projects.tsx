@@ -5,7 +5,6 @@ interface Project {
     description: string
     techStack: string[]
     image: string
-    gradient: string
     githubUrl?: string
     liveUrl?: string
 }
@@ -19,7 +18,6 @@ const Projects = () => {
             description: 'A contact and information sharing system, consisting of 2 apps and a dashboard for admins, built mainly to help business owners and customers to find and share contact info and services through shortened URLs and location sharing.',
             techStack: ['Django', 'Python', 'JavaScript', 'PostgreSQL', 'Redis'],
             image: '🔗',
-            gradient: 'from-blue-500 to-cyan-500',
             githubUrl: 'https://github.com',
             liveUrl: 'https://example.com'
         },
@@ -29,7 +27,6 @@ const Projects = () => {
             description: 'Mobile app with a responsive dashboard to manage users/employees and manage the data shown in the app, with a custom and responsive registration form to sign up new pilgrims, and a custom landing page, all built on behalf of Al-Noor pilgrim campaign located in Al-kaddih, KSA.',
             techStack: ['Django', 'Python', 'JavaScript', 'PostgreSQL'],
             image: '🕌',
-            gradient: 'from-teal-500 to-emerald-500',
             githubUrl: 'https://github.com',
             liveUrl: 'https://example.com'
         },
@@ -39,40 +36,17 @@ const Projects = () => {
             description: 'A Collection of personal and commercial Automation tools and Workflows built with n8n with integration with services like Whatsapp, Youtube, Google Services and many more.',
             techStack: ['Go', 'n8n', 'Python', 'JavaScript'],
             image: '⚙️',
-            gradient: 'from-purple-500 to-blue-500',
             githubUrl: 'https://github.com',
             liveUrl: 'https://example.com'
         },
         {
             id: 4,
-            name: 'Fazaa',
-            description: 'A contact and information sharing system, consisting of 2 apps and a dashboard for admins, built mainly to help business owners and customers to find and share contact info and services through shortened URLs and location sharing.',
-            techStack: ['Django', 'Python', 'JavaScript', 'PostgreSQL', 'Redis'],
+            name: 'Pulse',
+            description: 'A Networking CLI tool built with Go, that provides a set of tools for network analysis and security testing, from port scanning, SSL Certificate checking, DNS lookup and more.',
+            techStack: ['Go'],
             image: '🔗',
-            gradient: 'from-blue-500 to-cyan-500',
-            githubUrl: 'https://github.com',
-            liveUrl: 'https://example.com'
+            githubUrl: 'https://github.com/rabee361/pulse',
         },
-        {
-            id: 5,
-            name: 'Alnoor Hajj Campaign',
-            description: 'Mobile app with a responsive dashboard to manage users/employees and manage the data shown in the app, with a custom and responsive registration form to sign up new pilgrims, and a custom landing page, all built on behalf of Al-Noor pilgrim campaign located in Al-kaddih, KSA.',
-            techStack: ['Django', 'Python', 'JavaScript', 'PostgreSQL'],
-            image: '🕌',
-            gradient: 'from-teal-500 to-emerald-500',
-            githubUrl: 'https://github.com',
-            liveUrl: 'https://example.com'
-        },
-        {
-            id: 6,
-            name: 'Automation Tools & Scripts',
-            description: 'A Collection of personal and commercial Automation tools and Workflows built with n8n with integration with services like Whatsapp, Youtube, Google Services and many more.',
-            techStack: ['Go', 'n8n', 'Python', 'JavaScript'],
-            image: '⚙️',
-            gradient: 'from-purple-500 to-blue-500',
-            githubUrl: 'https://github.com',
-            liveUrl: 'https://example.com'
-        }
     ]
 
     return (
@@ -103,11 +77,6 @@ const Projects = () => {
                             key={project.id}
                             className="group relative p-6 bg-white/50 dark:bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full overflow-hidden"
                         >
-                            {/* Gradient Accent Bar */}
-                            <div
-                                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.gradient} opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
-                            />
-
                             <div className="mb-6">
                                 <h3 className="text-2xl font-bold text-[#201E43] dark:text-white mb-3">{project.name}</h3>
                                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed line-clamp-4 font-light">

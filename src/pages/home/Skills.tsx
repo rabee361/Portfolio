@@ -29,7 +29,6 @@ interface Skill {
 interface SkillCategory {
     title: string;
     skills: Skill[];
-    color: string;
 }
 
 function Skills() {
@@ -66,7 +65,6 @@ function Skills() {
     const skillCategories: SkillCategory[] = [
         {
             title: "Programming Languages",
-            color: "from-blue-500 to-cyan-500",
             skills: [
                 { name: "Go", icon: <SiGo className="text-2xl" /> },
                 { name: "Python", icon: <SiPython className="text-2xl" /> },
@@ -76,7 +74,6 @@ function Skills() {
         },
         {
             title: "Frameworks & Libraries",
-            color: "from-purple-500 to-pink-500",
             skills: [
                 { name: "Django", icon: <SiDjango className="text-2xl" /> },
                 { name: "FastAPI", icon: <SiFastapi className="text-2xl" /> },
@@ -87,7 +84,6 @@ function Skills() {
         },
         {
             title: "DevOps & Tools",
-            color: "from-orange-500 to-red-500",
             skills: [
                 { name: "GitHub", icon: <SiGithub className="text-2xl" /> },
                 { name: "Git", icon: <SiGit className="text-2xl" /> },
@@ -98,7 +94,6 @@ function Skills() {
         },
         {
             title: "Databases",
-            color: "from-green-500 to-emerald-500",
             skills: [
                 { name: "SQL", icon: <FaDatabase className="text-2xl" /> },
                 { name: "SQLite", icon: <SiSqlite className="text-2xl" /> },
@@ -163,16 +158,9 @@ function SkillCard({ category, variants }: SkillCardProps) {
             variants={variants}
             className="group relative p-6 bg-white/50 dark:bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
         >
-            {/* Gradient Accent Bar */}
-            <div
-                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${category.color} opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
-            />
 
             {/* Category Title */}
             <h3 className="text-xl font-semibold text-[#201E43] dark:text-white mb-4 flex items-center gap-2">
-                <span
-                    className={`w-2 h-2 rounded-full bg-gradient-to-r ${category.color}`}
-                />
                 {category.title}
             </h3>
 

@@ -208,9 +208,6 @@ function ServiceCard({ service, index }: ServiceCardProps) {
             }}
             className="group relative flex flex-col items-center p-6 md:p-8 bg-white/40 dark:bg-gray-800/30 backdrop-blur-md rounded-[2.5rem] border border-white/20 dark:border-gray-700/50 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
         >
-            {/* Top Accent Line */}
-            <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color} opacity-70 group-hover:h-1.5 transition-all duration-300`} />
-
             {/* Animation Section */}
             <div className="w-full h-48 flex items-center justify-center mb-6">
                 {service.animation}
@@ -218,10 +215,6 @@ function ServiceCard({ service, index }: ServiceCardProps) {
 
             {/* Content Section */}
             <div className="flex-1 flex flex-col items-center text-center space-y-5">
-                <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br ${service.color} text-white shadow-lg shrink-0 mb-2`}>
-                    {service.icon}
-                </div>
-                
                 <div className="space-y-3">
                     <h3 className="text-xl md:text-2xl font-bold text-[#201E43] dark:text-white">
                         {service.title}

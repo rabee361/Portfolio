@@ -98,18 +98,44 @@ export const Plasma = ({
     direction = 'forward',
     scale = 1.1,
     opacity = 0.6,
-    mouseInteractive = true
+    mouseInteractive = false
 }: PlasmaProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const mousePos = useRef({ x: 0, y: 0 });
+    const programRef = useRef<Program | null>(null);
+    const propsRef = useRef({ color, speed, direction, scale, opacity, mouseInteractive });
+
+    // Update props ref and uniforms whenever props change
+    useEffect(() => {
+        // Update the ref so the animation loop can access the latest values
+        propsRef.current = { color, speed, direction, scale, opacity, mouseInteractive };
+
+        // Update uniforms directly if the program exists
+        if (programRef.current) {
+            const program = programRef.current;
+            const rgb = hexToRgb(color);
+
+            // Handle color uniform
+            const colorUniform = program.uniforms.uCustomColor.value as Float32Array;
+            colorUniform[0] = rgb[0];
+            colorUniform[1] = rgb[1];
+            colorUniform[2] = rgb[2];
+
+            program.uniforms.uUseCustomColor.value = color ? 1.0 : 0.0;
+            program.uniforms.uSpeed.value = speed * 0.4;
+            program.uniforms.uDirection.value = direction === 'reverse' ? -1.0 : 1.0;
+            program.uniforms.uScale.value = scale;
+            program.uniforms.uOpacity.value = opacity;
+            program.uniforms.uMouseInteractive.value = mouseInteractive ? 1.0 : 0.0;
+        }
+    }, [color, speed, direction, scale, opacity, mouseInteractive]);
 
     useEffect(() => {
         if (!containerRef.current) return;
 
-        const useCustomColor = color ? 1.0 : 0.0;
-        const customColorRgb = color ? hexToRgb(color) : [1, 1, 1];
-
-        const directionMultiplier = direction === 'reverse' ? -1.0 : 1.0;
+        const currentProps = propsRef.current;
+        const initialColorRgb = currentProps.color ? hexToRgb(currentProps.color) : [1, 1, 1];
+        const initialDirection = currentProps.direction === 'reverse' ? -1.0 : 1.0;
 
         const renderer = new Renderer({
             webgl: 2,
@@ -132,32 +158,36 @@ export const Plasma = ({
             uniforms: {
                 iTime: { value: 0 },
                 iResolution: { value: new Float32Array([1, 1]) },
-                uCustomColor: { value: new Float32Array(customColorRgb) },
-                uUseCustomColor: { value: useCustomColor },
-                uSpeed: { value: speed * 0.4 },
-                uDirection: { value: directionMultiplier },
-                uScale: { value: scale },
-                uOpacity: { value: opacity },
+                uCustomColor: { value: new Float32Array(initialColorRgb) },
+                uUseCustomColor: { value: currentProps.color ? 1.0 : 0.0 },
+                uSpeed: { value: currentProps.speed * 0.4 },
+                uDirection: { value: initialDirection },
+                uScale: { value: currentProps.scale },
+                uOpacity: { value: currentProps.opacity },
                 uMouse: { value: new Float32Array([0, 0]) },
-                uMouseInteractive: { value: mouseInteractive ? 1.0 : 0.0 }
+                uMouseInteractive: { value: currentProps.mouseInteractive ? 1.0 : 0.0 }
             }
         });
+
+        programRef.current = program;
 
         const mesh = new Mesh(gl, { geometry, program });
 
         const handleMouseMove = (e: MouseEvent) => {
-            if (!mouseInteractive || !containerRef.current) return;
+            // Check current interactivity from propsRef
+            if (!propsRef.current.mouseInteractive || !containerRef.current) return;
+
             const rect = containerRef.current.getBoundingClientRect();
             mousePos.current.x = e.clientX - rect.left;
             mousePos.current.y = e.clientY - rect.top;
+
             const mouseUniform = program.uniforms.uMouse.value as Float32Array;
             mouseUniform[0] = mousePos.current.x;
             mouseUniform[1] = mousePos.current.y;
         };
 
-        if (mouseInteractive) {
-            containerRef.current.addEventListener('mousemove', handleMouseMove);
-        }
+        // Always add the listener, the handler checks propsRef.current.mouseInteractive
+        window.addEventListener('mousemove', handleMouseMove);
 
         const setSize = () => {
             if (!containerRef.current) return;
@@ -177,8 +207,10 @@ export const Plasma = ({
         let raf = 0;
         const t0 = performance.now();
         const loop = (t: number) => {
+            const { direction: currentDirection } = propsRef.current;
             let timeValue = (t - t0) * 0.001;
-            if (direction === 'pingpong') {
+
+            if (currentDirection === 'pingpong') {
                 const pingpongDuration = 10;
                 const segmentTime = timeValue % pingpongDuration;
                 const isForward = Math.floor(timeValue / pingpongDuration) % 2 === 0;
@@ -189,7 +221,9 @@ export const Plasma = ({
                 program.uniforms.iTime.value = pingpongTime;
             } else {
                 program.uniforms.iTime.value = timeValue;
+                // uDirection is already managed by the update effect for forward/reverse
             }
+
             renderer.render({ scene: mesh });
             raf = requestAnimationFrame(loop);
         };
@@ -198,18 +232,18 @@ export const Plasma = ({
         return () => {
             cancelAnimationFrame(raf);
             ro.disconnect();
-            if (mouseInteractive && containerRef.current) {
-                containerRef.current.removeEventListener('mousemove', handleMouseMove);
-            }
+            window.removeEventListener('mousemove', handleMouseMove);
+            programRef.current = null;
+
             try {
                 if (containerRef.current && canvas.parentNode === containerRef.current) {
                     containerRef.current.removeChild(canvas);
                 }
             } catch {
-                console.warn('Canvas already removed from container');
+                // Silently ignore if already removed
             }
         };
-    }, [color, speed, direction, scale, opacity, mouseInteractive]);
+    }, []); // Only run once on mount
 
     return <div ref={containerRef} className="w-full h-full overflow-hidden relative" />;
 };

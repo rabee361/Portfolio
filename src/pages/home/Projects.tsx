@@ -26,12 +26,12 @@ const Projects = () => {
             githubUrl: 'https://github.com/rabee361/Alnoor',
             liveUrl: 'https://alnoor-hajj.com'
         },
-        {
-            id: 3,
-            name: 'Automation Tools & Scripts',
-            description: 'A Collection of personal and commercial Automation tools and Workflows built with n8n with integration with services like Whatsapp, Youtube, Google Services and many more.',
-            techStack: ['Go', 'n8n', 'Python', 'JavaScript'],
-        },
+        // {
+        //     id: 3,
+        //     name: 'Automation Tools & Scripts',
+        //     description: 'A Collection of personal and commercial Automation tools and Workflows built with n8n with integration with services like Whatsapp, Youtube, Google Services and many more.',
+        //     techStack: ['Go', 'n8n', 'Python', 'JavaScript'],
+        // },
         {
             id: 4,
             name: 'Pulse',

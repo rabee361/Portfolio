@@ -41,13 +41,6 @@ function About() {
 
   return (
     <div ref={ref} id="about" className="relative w-full min-h-screen flex flex-col items-center justify-center py-20 overflow-hidden">
-      {/* Inject Font */}
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
-          .font-outfit { font-family: 'Outfit', sans-serif; }
-        `}
-      </style>
 
       <motion.div
         variants={containerVariants}

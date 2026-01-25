@@ -7,14 +7,14 @@ services:
       - "3000"
     labels:
       - "traefik.enable=true"
-      # Routing for both domains
-      - "traefik.http.routers.portfolio.rule=Host(`rabeehasan.online`) || Host(`honeybunny.online`) || Host(`www.rabeehasan.online`) || Host(`www.honeybunny.online`)"
+      # Root routing for Portfolio
+      - "traefik.http.routers.portfolio.rule=(Host(`rabeehasan.online`) || Host(`www.rabeehasan.online`) && PathPrefix(`/`) 
       - "traefik.http.routers.portfolio.entrypoints=websecure"
       - "traefik.http.routers.portfolio.tls.certresolver=myresolver"
       # Port inside the container
       - "traefik.http.services.portfolio.loadbalancer.server.port=3000"
-      # Optional: Automatic HTTP to HTTPS redirection
-      - "traefik.http.routers.portfolio-http.rule=Host(`rabeehasan.online`) || Host(`honeybunny.online`) || Host(`www.rabeehasan.online`) || Host(`www.honeybunny.online`)"
+      # HTTP to HTTPS redirection for portfolio
+      - "traefik.http.routers.portfolio-http.rule=(Host(`rabeehasan.online`) && PathPrefix(`/`)"
       - "traefik.http.routers.portfolio-http.entrypoints=web"
       - "traefik.http.routers.portfolio-http.middlewares=redirect-to-https"
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"

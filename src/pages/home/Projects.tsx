@@ -1,8 +1,8 @@
 
 import { motion } from 'framer-motion'
 import chartsImage from '../../assets/images/charts.avif'
-import Alnoor from '../../assets/images/Alnoor.png'
-import Fazaa from '../../assets/images/Fazaa.jpg'
+import Alnoor from '../../assets/images/alnoor.png'
+import Fazaa from '../../assets/images/fazaa.jpg'
 
 interface Project {
     id: number

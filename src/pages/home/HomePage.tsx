@@ -4,7 +4,7 @@ import Hero from './Hero'
 import Navbar from './Navbar'
 import Projects from './Projects'
 import Skills from './Skills'
-import Services from './Services'
+// import Services from './Services'
 
 function HomePage() {
   return (
@@ -14,8 +14,7 @@ function HomePage() {
         <About/>
         <Skills/>
         <Projects/>
-        <Services/>
-        {/* <Projects/> */}
+        {/* <Services/> */}
     </div>
   )
 }

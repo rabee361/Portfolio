@@ -53,24 +53,7 @@ function Services() {
             cta: "Automate My Workflow",
             animation: (
                 <div className="relative w-full h-full flex items-center justify-center scale-90 md:scale-75 lg:scale-95">
-                    <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                        className="text-[6rem] text-blue-500/10"
-                    >
-                        <FaGear />
-                    </motion.div>
-                    <motion.div
-                        animate={{ 
-                            scale: [1, 1.2, 1],
-                            opacity: [0.4, 1, 0.4],
-                            y: [0, -5, 0]
-                        }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute text-5xl text-cyan-400 drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]"
-                    >
-                        <FaRobot />
-                    </motion.div>
+
                 </div>
             )
         },
@@ -83,35 +66,7 @@ function Services() {
             cta: "Build My Backend",
             animation: (
                 <div className="relative w-full h-full flex items-center justify-center scale-90 md:scale-75 lg:scale-90">
-                    <div className="grid grid-cols-2 gap-3">
-                        {[1, 2, 3, 4].map((i) => (
-                            <motion.div
-                                key={i}
-                                animate={{ 
-                                    scale: [1, 1.05, 1],
-                                    backgroundColor: ["rgba(99, 102, 241, 0.1)", "rgba(99, 102, 241, 0.3)", "rgba(99, 102, 241, 0.1)"]
-                                }}
-                                transition={{ 
-                                    duration: 2, 
-                                    repeat: Infinity, 
-                                    delay: i * 0.4 
-                                }}
-                                className="w-12 h-12 rounded-xl border-2 border-indigo-500/20 flex items-center justify-center text-indigo-400 shadow-inner"
-                            >
-                                <FaDatabase className="text-2xl" />
-                            </motion.div>
-                        ))}
-                    </div>
-                    <motion.div 
-                        animate={{ 
-                            opacity: [0, 1, 0],
-                            y: [10, -10, -30] 
-                        }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                        className="absolute text-purple-400"
-                    >
-                        <FaBolt className="text-xl" />
-                    </motion.div>
+
                 </div>
             )
         },

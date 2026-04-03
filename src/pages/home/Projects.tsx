@@ -1,8 +1,8 @@
 
 import { motion } from 'framer-motion'
 import chartsImage from '../../assets/images/charts.avif'
-import Alnoor from '../../assets/images/alnoor.png'
-import Fazaa from '../../assets/images/fazaa.jpg'
+import Alnoor from '../../assets/images/Alnoor.png'
+import Fazaa from '../../assets/images/Fazaa.jpg'
 
 interface Project {
     id: number
@@ -107,7 +107,7 @@ const Projects = () => {
             description: 'A contact and information sharing system, consisting of 2 apps and a dashboard for admins, built mainly to help business owners and customers to find and share contact info and services through shortened URLs and location sharing.',
             techStack: ['Django', 'Python', 'JavaScript', 'PostgreSQL', 'Redis'],
             githubUrl: 'https://github.com/rabeee361/Fazaa',
-            imageSrc: Alnoor,
+            imageSrc: Fazaa,
             imageAlt: 'Fazaa project preview',
         },
         {
@@ -117,7 +117,7 @@ const Projects = () => {
             techStack: ['Django', 'Python', 'JavaScript', 'PostgreSQL'],
             githubUrl: 'https://github.com/rabee361/Alnoor',
             liveUrl: 'https://alnoor-hajj.com',
-            imageSrc: Fazaa,
+            imageSrc: Alnoor,
             imageAlt: 'Alnoor Hajj Campaign project preview',
         },
         // {

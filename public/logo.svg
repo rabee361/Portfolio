@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradStem" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D0E2FF"/>
+    </linearGradient>
+
+    <linearGradient id="gradLoop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052D4"/>
+      <stop offset="50%" stop-color="#4364F7"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+
+    <linearGradient id="gradLeg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#4364F7" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#080C16"/>
+
+  <g stroke-width="1" fill="none">
+    <circle cx="250" cy="250" r="160" stroke="#FFFFFF" stroke-opacity="0.03"/>
+    <circle cx="250" cy="250" r="210" stroke="#00D4FF" stroke-opacity="0.05" stroke-dasharray="6 6"/>
+  </g>
+
+  <g filter="url(#glow)" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="60">
+    
+    <line x1="140" y1="120" x2="140" y2="380" stroke="url(#gradStem)" />
+
+    <path d="M 215 150 H 260 A 65 65 0 0 1 260 280 H 215" stroke="url(#gradLoop)" />
+
+    <line x1="290" y1="340" x2="340" y2="390" stroke="url(#gradLeg)" />
+    
+  </g>
+</svg>

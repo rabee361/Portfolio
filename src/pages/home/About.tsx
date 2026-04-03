@@ -73,12 +73,12 @@ function About() {
             <InfoCard
               icon={<FaGraduationCap />}
               label="Education"
-              value="BIT, Albaath University"
+              value="IT, Homs University"
             />
             <InfoCard
               icon={<FaBriefcase />}
               label="Experience"
-              value="2+ Years Back-End Dev"
+              value="3+ Years Back-End Dev"
             />
             <InfoCard
               icon={<FaLanguage />}
@@ -88,7 +88,7 @@ function About() {
             <InfoCard
               icon={<FaTools />}
               label="Tech Stack"
-              value="Python, Django, React, Redis"
+              value="Python, Django, Go, Elixir"
             />
           </motion.div>
         </div>

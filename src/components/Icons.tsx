@@ -23,18 +23,6 @@ function StrokeIcon({
   );
 }
 
-function FilledIcon({
-  children,
-  viewBox = '0 0 24 24',
-  ...props
-}: IconProps & { children: ReactNode; viewBox?: string }) {
-  return (
-    <svg viewBox={viewBox} fill="currentColor" aria-hidden="true" {...props}>
-      {children}
-    </svg>
-  );
-}
-
 function BadgeIcon({ label, ...props }: IconProps & { label: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>

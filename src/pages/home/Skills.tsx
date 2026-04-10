@@ -1,5 +1,4 @@
-import { motion, useInView, useAnimation } from "framer-motion";
-import { useRef, useEffect } from "react";
+import type { CSSProperties, JSX } from "react";
 import {
     SiGo,
     SiPython,
@@ -18,8 +17,9 @@ import {
     SiMysql,
     SiSqlite,
     SiPostgresql
-} from "react-icons/si";
-import { FaDatabase } from "react-icons/fa";
+} from '../../components/Icons';
+import { FaDatabase } from '../../components/Icons';
+import { useInView } from '../../hooks/useInView';
 
 interface Skill {
     name: string;
@@ -32,35 +32,10 @@ interface SkillCategory {
 }
 
 function Skills() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-    const mainControls = useAnimation();
-
-    useEffect(() => {
-        if (isInView) {
-            mainControls.start("visible");
-        }
-    }, [isInView, mainControls]);
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.2,
-            },
-        },
-    };
-
-    const cardVariants = {
-        hidden: { y: 30, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: { duration: 0.6, ease: "easeOut" },
-        },
-    };
+    const [ref, isInView] = useInView<HTMLDivElement>({
+        freezeOnceVisible: true,
+        rootMargin: '-100px',
+    });
 
     const skillCategories: SkillCategory[] = [
         {
@@ -106,50 +81,43 @@ function Skills() {
     return (
         <div
             ref={ref}
-            id="skills"
             className="relative w-full min-h-screen flex flex-col items-center justify-center py-20 overflow-hidden"
         >
 
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate={mainControls}
-                className="font-outfit w-full max-w-6xl px-6 flex flex-col items-center gap-12"
+            <div
+                className={`reveal-section font-sans flex w-full max-w-6xl flex-col items-center gap-12 px-6 ${isInView ? 'is-visible' : ''}`}
             >
                 {/* Section Header */}
-                <motion.div variants={cardVariants} className="text-center space-y-4">
+                <div className="reveal-item text-center space-y-4" style={{ transitionDelay: '120ms' }}>
                     <h2 className="text-4xl md:text-6xl font-bold text-[#201E43] dark:text-white tracking-tight">
                         My <span className="text-[#508C9B] dark:text-blue-400">Skills</span>
                     </h2>
                     <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
                         Technologies and tools I work with to build robust applications
                     </p>
-                </motion.div>
+                </div>
 
                 {/* Skills Grid */}
-                <motion.div
-                    variants={containerVariants}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
-                >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                     {skillCategories.map((category, idx) => (
-                        <SkillCard key={idx} category={category} variants={cardVariants} />
+                        <SkillCard key={category.title} category={category} delayMs={220 + idx * 90} />
                     ))}
-                </motion.div>
-            </motion.div>
+                </div>
+            </div>
         </div>
     );
 }
 
 interface SkillCardProps {
     category: SkillCategory;
-    variants: any;
+    delayMs: number;
 }
 
-function SkillCard({ category, variants }: SkillCardProps) {
+function SkillCard({ category, delayMs }: SkillCardProps) {
     return (
-        <motion.div
-            variants={variants}
-            className="group relative p-6 bg-white/50 dark:bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+        <div
+            className="reveal-item group relative overflow-hidden rounded-2xl border border-gray-200 bg-white/50 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800/40"
+            style={{ transitionDelay: `${delayMs}ms` } as CSSProperties}
         >
 
             {/* Category Title */}
@@ -173,7 +141,7 @@ function SkillCard({ category, variants }: SkillCardProps) {
                     </div>
                 ))}
             </div>
-        </motion.div>
+        </div>
     );
 }
 

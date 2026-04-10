@@ -1,12 +1,12 @@
-import { motion, useInView, useAnimation } from "framer-motion";
-import { useRef, useEffect, ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { 
     FaRobot, 
     FaServer, 
     FaGlobe, 
     FaArrowRight, 
     FaCode,
-} from "react-icons/fa6";
+} from '../../components/Icons';
+import { useInView } from '../../hooks/useInView';
 
 interface ServiceItem {
     id: string;
@@ -19,26 +19,10 @@ interface ServiceItem {
 }
 
 function Services() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-    const mainControls = useAnimation();
-
-    useEffect(() => {
-        if (isInView) {
-            mainControls.start("visible");
-        }
-    }, [isInView, mainControls]);
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.1,
-            },
-        },
-    };
+    const [ref, isInView] = useInView<HTMLDivElement>({
+        freezeOnceVisible: true,
+        rootMargin: '-100px',
+    });
 
     const services: ServiceItem[] = [
         {
@@ -76,32 +60,21 @@ function Services() {
             cta: "Get a Website",
             animation: (
                 <div className="relative w-full h-full flex items-center justify-center scale-90 md:scale-75 lg:scale-90">
-                    <motion.div 
-                        className="w-48 h-32 border-[3px] border-emerald-500/30 rounded-xl overflow-hidden bg-emerald-500/5 p-4 flex flex-col gap-2 shadow-xl backdrop-blur-sm"
-                        whileHover={{ scale: 1.05 }}
-                    >
+                    <div className="w-48 h-32 rounded-xl border-[3px] border-emerald-500/30 bg-emerald-500/5 p-4 shadow-xl backdrop-blur-sm transition-transform duration-300 group-hover:scale-105">
                         <div className="flex gap-1.5">
                             <div className="w-2 h-2 rounded-full bg-red-400" />
                             <div className="w-2 h-2 rounded-full bg-yellow-400" />
                             <div className="w-2 h-2 rounded-full bg-green-400" />
                         </div>
                         <div className="flex flex-col gap-2 mt-1">
-                            <motion.div 
-                                animate={{ width: ["20%", "70%", "20%"] }}
-                                transition={{ duration: 3, repeat: Infinity }}
-                                className="h-2 bg-emerald-400/30 rounded-full"
-                            />
-                            <motion.div 
-                                animate={{ width: ["10%", "50%", "10%"] }}
-                                transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-                                className="h-2 bg-emerald-400/10 rounded-full"
-                            />
+                            <div className="service-line h-2 rounded-full bg-emerald-400/30" />
+                            <div className="service-line service-line-delayed h-2 rounded-full bg-emerald-400/10" />
                             <div className="flex items-center gap-2 mt-1">
                                 <FaCode className="text-xl text-emerald-400" />
                                 <div className="h-2 w-full bg-emerald-400/10 rounded-full" />
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             )
         }
@@ -113,27 +86,18 @@ function Services() {
             id="services"
             className="relative w-full min-h-screen flex flex-col items-center py-24 overflow-hidden"
         >
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate={mainControls}
-                className="font-outfit w-full max-w-7xl px-6 flex flex-col items-center justify-center gap-16 relative z-10"
+            <div
+                className={`reveal-section relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-6 font-sans ${isInView ? 'is-visible' : ''}`}
             >
                 {/* Section Header */}
-                <motion.div 
-                    variants={{
-                        hidden: { y: 20, opacity: 0 },
-                        visible: { y: 0, opacity: 1, transition: { duration: 0.6 } }
-                    }}
-                    className="text-center space-y-4"
-                >
+                <div className="reveal-item text-center space-y-4" style={{ transitionDelay: '120ms' }}>
                     <h2 className="text-4xl md:text-5xl font-bold text-[#201E43] dark:text-white tracking-tight">
                         My <span className="text-[#508C9B] dark:text-blue-400">Services</span>
                     </h2>
                     <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
                         Tailored digital solutions designed to elevate your business and simplify your technology stack
                     </p>
-                </motion.div>
+                </div>
 
                 {/* Horizontal Service Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
@@ -141,7 +105,7 @@ function Services() {
                         <ServiceCard key={service.id} service={service} index={index} />
                     ))}
                 </div>
-            </motion.div>
+            </div>
         </section>
     );
 }
@@ -153,12 +117,9 @@ interface ServiceCardProps {
 
 function ServiceCard({ service, index }: ServiceCardProps) {
     return (
-        <motion.div
-            variants={{
-                hidden: { y: 30, opacity: 0 },
-                visible: { y: 0, opacity: 1, transition: { duration: 0.6, delay: index * 0.1 } }
-            }}
-            className="group relative flex flex-col items-center p-6 md:p-8 bg-white/40 dark:bg-gray-800/30 backdrop-blur-md rounded-[2.5rem] border border-white/20 dark:border-gray-700/50 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+        <div
+            className="reveal-item group relative flex flex-col items-center overflow-hidden rounded-[2.5rem] border border-white/20 bg-white/40 p-6 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-gray-700/50 dark:bg-gray-800/30 md:p-8"
+            style={{ transitionDelay: `${220 + index * 100}ms` } as CSSProperties}
         >
             {/* Animation Section */}
             <div className="w-full h-48 flex items-center justify-center mb-6">
@@ -176,16 +137,14 @@ function ServiceCard({ service, index }: ServiceCardProps) {
                     </p>
                 </div>
 
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`mt-auto flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r ${service.color} text-white text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300`}
+                <button
+                    className={`mt-auto flex items-center gap-2 rounded-full bg-gradient-to-r px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-lg active:scale-95 ${service.color}`}
                 >
                     {service.cta}
                     <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
-                </motion.button>
+                </button>
             </div>
-        </motion.div>
+        </div>
     );
 }
 

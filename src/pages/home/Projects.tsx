@@ -1,5 +1,3 @@
-
-import { motion } from 'framer-motion'
 import chartsImage from '../../assets/images/charts.avif'
 import Alnoor from '../../assets/images/alnoor.png'
 import Fazaa from '../../assets/images/fazaa.jpg'
@@ -29,6 +27,11 @@ function ProjectCard({ project }: ProjectCardProps) {
                     <img
                         src={project.imageSrc}
                         alt={project.imageAlt}
+                        loading="lazy"
+                        decoding="async"
+                        width={1280}
+                        height={800}
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                 ) : (
@@ -40,14 +43,11 @@ function ProjectCard({ project }: ProjectCardProps) {
                     </div>
                 )}
                 <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-950/60 to-transparent" />
-                <motion.div
-                    initial={false}
-                    className="absolute inset-0 flex items-end bg-gradient-to-t bg-slate-950/50 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                >
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t bg-slate-950/50 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <p className="text-sm leading-relaxed text-white font-light">
                         {project.description}
                     </p>
-                </motion.div>
+                </div>
             </div>
 
             <div className="flex flex-1 flex-col p-6">
@@ -138,7 +138,7 @@ const Projects = () => {
     ]
 
     return (
-        <div className="relative w-full py-20 overflow-hidden font-outfit">
+        <div className="relative w-full py-20 overflow-hidden font-sans">
 
             <section className="px-6 w-full max-w-6xl mx-auto flex flex-col items-center gap-12">
                 {/* Section Header */}

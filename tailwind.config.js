@@ -24,11 +24,16 @@ export default {
           '0%': { transform: 'translate(0, 0)' },
           '50%': { transform: 'translate(-20px, -20px)' },
           '100%': { transform: 'translate(0, 0)' }
+        },
+        'marquee': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' }
         }
       },
       animation: {
         'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
         'drift': 'drift 20s ease-in-out infinite',
+        'marquee': 'marquee 20s linear infinite',
       }
     },
   },

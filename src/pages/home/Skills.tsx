@@ -81,7 +81,7 @@ function Skills() {
     return (
         <div
             ref={ref}
-            className="relative w-full min-h-screen flex flex-col items-center justify-center py-20 overflow-hidden"
+            className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden py-20 dark:bg-[#0d1027]"
         >
 
             <div

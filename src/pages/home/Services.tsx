@@ -84,7 +84,7 @@ function Services() {
         <section
             ref={ref}
             id="services"
-            className="relative w-full min-h-screen flex flex-col items-center py-24 overflow-hidden"
+            className="relative w-full min-h-screen flex flex-col items-center overflow-hidden py-24 dark:bg-[#0d1027]"
         >
             <div
                 className={`reveal-section relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-6 font-sans ${isInView ? 'is-visible' : ''}`}

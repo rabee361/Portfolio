@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+# Allow bots to crawl JS and CSS files needed for rendering
+Allow: /*.js
+Allow: /*.css
+
+# Prevent indexing of specific technical paths if necessary
+Disallow: /n8n/
+Disallow: /static/
+Disallow: /api/
+-+
+# Add your sitemap
+Sitemap: https://rabeehasan.online

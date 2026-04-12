@@ -15,7 +15,7 @@ function About() {
   });
 
   return (
-    <div ref={ref} className="relative w-full min-h-screen flex flex-col items-center justify-center py-20 overflow-hidden">
+    <div ref={ref} className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden py-20 dark:bg-[#0d1027]">
 
       <div
         className={`reveal-section font-sans flex w-full max-w-6xl flex-col items-center gap-12 px-6 ${isInView ? 'is-visible' : ''}`}

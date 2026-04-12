@@ -5,6 +5,7 @@ import Navbar from './Navbar'
 
 const About = lazy(() => import('./About'))
 const Skills = lazy(() => import('./Skills'))
+const Projects = lazy(() => import('./Projects'))
 
 function SectionFallback() {
   return <div className='min-h-[45vh]' aria-hidden='true' />
@@ -40,6 +41,9 @@ function HomePage() {
         </DeferredSection>
         <DeferredSection id='skills'>
           <Skills/>
+        </DeferredSection>
+        <DeferredSection id='projects'>
+          <Projects/>
         </DeferredSection>
     </div>
   )
